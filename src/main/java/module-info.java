@@ -7,4 +7,6 @@ module com.example.pufighters {
             
     opens com.example.pufighters to javafx.fxml;
     exports com.example.pufighters;
+    exports com.example.pufighters.Controllers;
+    opens com.example.pufighters.Controllers to javafx.fxml;
 }
