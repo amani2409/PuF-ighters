@@ -21,4 +21,11 @@ public class HomepageController {
         new SwitchScene(homepageAchorpane, "Fxml/login.fxml");
     }
 
+
+    @FXML
+    void onSwitchToSettings(ActionEvent event) throws IOException {
+        new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
+    }
+
+
 }

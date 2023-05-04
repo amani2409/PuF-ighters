@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="let's go !">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/SwitchScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/puf-hero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Styles" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -64,6 +56,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
