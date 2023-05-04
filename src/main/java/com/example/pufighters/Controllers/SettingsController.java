@@ -33,7 +33,7 @@ public class SettingsController {
 //        Image muteIcon = new Image(getClass().getResourceAsStream("Images/mute.png"));
 //        muteButton = new ToggleButton("Mute", new ImageView(muteIcon));
       //  soundIcon.setImage(new Image("Images/mute.png"));
-        final ToggleButton toggle      = new ToggleButton();
+/*        final ToggleButton toggle      = new ToggleButton();
         final Image        unselected  = new Image("Images/sound.png");
         final Image        selected    = new Image("Images/mute.png");
         final ImageView    toggleImage = new ImageView();
@@ -42,7 +42,7 @@ public class SettingsController {
                 .when(toggle.selectedProperty())
                 .then(selected)
                 .otherwise(unselected)
-        );
+        );*/
     }
 
     @FXML
