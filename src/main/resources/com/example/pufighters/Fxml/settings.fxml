@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pufighters.Controllers.SettingsController">
-   <children>
+<AnchorPane fx:id="settingsAchorpane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pufighters.Controllers.SettingsController">
+
       <VBox prefHeight="400.0" prefWidth="600.0">
-         <children>
+
             <ToggleButton mnemonicParsing="false" onAction="#muteToggle" prefHeight="25.0" prefWidth="124.0" text="Mute" />
             <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Button" />
             <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="privacy policy" />
             <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Sources" />
             <Button mnemonicParsing="false" onAction="#onSwitchToHomepage" text="return" />
-         </children>
+
       </VBox>
-   </children>
 </AnchorPane>

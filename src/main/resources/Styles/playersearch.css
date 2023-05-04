@@ -1,0 +1,8 @@
+.login_container {
+ -fx-background-color: #e3c022;
+ -fx-with: 200px;
+}
+
+.img_player1 {
+  -fx-border-radius: 50%;
+}

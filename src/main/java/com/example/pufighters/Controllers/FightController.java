@@ -7,20 +7,14 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class SettingsController {
+public class FightController {
 
     @FXML
-    private AnchorPane settingsAchorpane;
-
-    @FXML
-    void muteToggle(ActionEvent event) {
-
-    }
+    private AnchorPane fightAnchorpane;
 
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
-        new SwitchScene(settingsAchorpane, "Fxml/homepage.fxml");
+        new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
     }
 
 }
-

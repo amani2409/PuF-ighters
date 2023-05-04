@@ -16,12 +16,19 @@ public class HomepageController {
     @FXML
     private AnchorPane homepageAchorpane;
 
+
+
     @FXML
     void onSwitchToLogin(ActionEvent event) throws IOException {
         new SwitchScene(homepageAchorpane, "Fxml/login.fxml");
     }
 
+    @FXML
+    void onSwitchToPlayersearch(ActionEvent event) throws IOException {
+        new SwitchScene(homepageAchorpane, "Fxml/playerSearch.fxml");
+    }
 
+        //
     @FXML
     void onSwitchToSettings(ActionEvent event) throws IOException {
         new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
