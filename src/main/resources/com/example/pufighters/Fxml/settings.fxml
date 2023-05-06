@@ -22,30 +22,30 @@
        <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
          <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
      </rowConstraints>
-      <children>
+
                <Button mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="25.0" prefWidth="117.0" text="return" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          <Button mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="25.0" prefWidth="127.0" text="reset highscore" GridPane.rowIndex="3" />
    
                   <ToggleButton fx:id="muteButton" mnemonicParsing="false" onAction="#muteToggle" prefHeight="27.0" prefWidth="124.0" text="Music">
             <graphic>
                <ImageView fitHeight="56.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
+
                      <Image url="@../../../../Images/music.png" />
-                  </image>
+
                </ImageView>
             </graphic>
          </ToggleButton>
                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="Soundeffect" GridPane.columnIndex="2">
             <graphic>
                <ImageView fx:id="soundIcon" fitHeight="18.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
+
                      <Image url="@../../../../Images/sound.png" />
-                  </image>
+
                </ImageView>
             </graphic>
          </Button>
                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="privacy policy" GridPane.rowIndex="2" />
                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Sources" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      </children>
+
    </GridPane>
 </AnchorPane>
