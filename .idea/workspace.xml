@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="Layout off settings">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/hit-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Styles/fight.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Styles/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2023_2_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2023_2_59_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/PlayerSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/playersearch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/playerSearch.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +40,7 @@
       <list>
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -41,25 +64,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters\src\main\resources\Images" />
@@ -78,6 +103,7 @@
       <updated>1682525367133</updated>
       <workItem from="1682525368183" duration="425000" />
       <workItem from="1683125910384" duration="49000" />
+      <workItem from="1683393880778" duration="18365000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -131,5 +157,9 @@
     <MESSAGE value="mute" />
     <MESSAGE value="Layout off settings" />
     <option name="LAST_COMMIT_MESSAGE" value="Layout off settings" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

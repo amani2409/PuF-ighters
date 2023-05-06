@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+.text-play-bar {
+    -fx-font-family:'Gloria Hallelujah', cursive;
+    -fx-font-size: 16px;
+}
+
+.left-pic {
+    -fx-background-color: #ffca4e;
+}
+.right-pic {
+    -fx-background-color: pink;
+}
+
+.fig-border {
+    -fx-border-color: rgb(238, 126, 165);
+    -fx-border-width: 3px;
+}
+
+.player-section {
+    -fx-background-color: rgb(0, 0, 0, 0.80);
+}
+
+.button-setlog {
+    -fx-background-color: rgba(0, 0, 0, 0.80);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-family:'Gloria Hallelujah', cursive;
+    -fx-font-size: 14px;
+}
+.button-setlog:hover {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgba(0, 0, 0, 0.80);
+}
+
+.button-startgame {
+    -fx-background-color: rgba(0, 0, 0, 0.80);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-family:'Gloria Hallelujah', cursive;
+    -fx-font-size: 24px;
+}
+.button-startgame:hover {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: rgba(0, 0, 0, 0.80);
+}

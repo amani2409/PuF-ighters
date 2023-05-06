@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+.text-fight {
+    -fx-font-family:'Gloria Hallelujah', cursive;
+}
+
+.label-mana {
+    -fx-background-color: #ffca4e;
+}
+
+.label-hp {
+    -fx-background-color: rgb(238, 126, 165);
+}

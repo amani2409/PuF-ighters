@@ -27,19 +27,14 @@ public class HomepageController implements Initializable {
     }
 
     @FXML
-    void onSwitchToPlayersearch(ActionEvent event) throws IOException {
-        new SwitchScene(homepageAchorpane, "Fxml/playerSearch.fxml");
+    void onSwitchToFight(ActionEvent event) throws IOException {
+        new SwitchScene(homepageAchorpane, "Fxml/fight.fxml");
     }
 
         //
     @FXML
     void onSwitchToSettings(ActionEvent event) throws IOException {
         new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
-    }
-
-    @FXML
-    void onClickTerminate(ActionEvent event) {
-
     }
 
 
