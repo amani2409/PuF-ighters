@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="new login page &#10;- new buttons&#10;- new background">
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="new setting Page&#10;- background&#10;- buttons&#10;-&gt; Feinheiten folgen">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-3 - setting.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +97,7 @@
       <workItem from="1682525368183" duration="425000" />
       <workItem from="1683125910384" duration="49000" />
       <workItem from="1683393880778" duration="19880000" />
-      <workItem from="1683460790678" duration="5976000" />
+      <workItem from="1683460790678" duration="7926000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -153,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683467021283</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="new setting Page&#10;- background&#10;- buttons&#10;-&gt; Feinheiten folgen">
+      <created>1683468393954</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683468393954</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +188,8 @@
     <MESSAGE value="Anpassung an neues GUI-Layout. Zentralisierung geht jetzt einigermaßen" />
     <MESSAGE value="Bilder komprimiert, immernoch langsam..." />
     <MESSAGE value="new login page &#10;- new buttons&#10;- new background" />
-    <option name="LAST_COMMIT_MESSAGE" value="new login page &#10;- new buttons&#10;- new background" />
+    <MESSAGE value="new setting Page&#10;- background&#10;- buttons&#10;-&gt; Feinheiten folgen" />
+    <option name="LAST_COMMIT_MESSAGE" value="new setting Page&#10;- background&#10;- buttons&#10;-&gt; Feinheiten folgen" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

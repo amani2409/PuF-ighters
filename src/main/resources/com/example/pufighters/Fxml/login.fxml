@@ -43,7 +43,7 @@
                <RowConstraints maxHeight="204.80001220703127" minHeight="10.0" prefHeight="90.00002441406251" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="51.0" prefWidth="318.0" styleClass="button-setlog" stylesheets="@../../../../Styles/login.css" text="login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="51.0" prefWidth="318.0" styleClass="button-setlog" text="login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                <HBox prefHeight="92.0" prefWidth="218.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <children>
                      <VBox prefHeight="92.0" prefWidth="100.0">
@@ -67,7 +67,6 @@
       </children>
    </GridPane>
    <stylesheets>
-      <URL value="@../../../../Styles/login.css" />
       <URL value="@../../../../Styles/homepage.css" />
    </stylesheets>
 </AnchorPane>
