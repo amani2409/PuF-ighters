@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="Bilder komprimiert, immernoch langsam..." />
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="new login page &#10;- new buttons&#10;- new background">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-2_original.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2023_2_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2023_2_59_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/login.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +57,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "settings.json.schema.catalog",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -68,6 +74,19 @@
       <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources\com\example\pufighters\Fxml" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,6 +98,7 @@
       <workItem from="1682525368183" duration="425000" />
       <workItem from="1683125910384" duration="49000" />
       <workItem from="1683393880778" duration="19880000" />
+      <workItem from="1683460790678" duration="4808000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -154,7 +174,8 @@
     <MESSAGE value="Layout off settings" />
     <MESSAGE value="Anpassung an neues GUI-Layout. Zentralisierung geht jetzt einigermaßen" />
     <MESSAGE value="Bilder komprimiert, immernoch langsam..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bilder komprimiert, immernoch langsam..." />
+    <MESSAGE value="new login page &#10;- new buttons&#10;- new background" />
+    <option name="LAST_COMMIT_MESSAGE" value="new login page &#10;- new buttons&#10;- new background" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
