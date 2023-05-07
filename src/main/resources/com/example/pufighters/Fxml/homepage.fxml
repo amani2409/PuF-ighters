@@ -216,7 +216,7 @@
                                        <padding>
                                           <Insets left="10.0" />
                                        </padding></Label>
-                                    <Label prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 1" textFill="#e1bd08">
+                                    <Label prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 2" textFill="#e1bd08">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>

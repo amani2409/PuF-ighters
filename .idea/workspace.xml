@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="Anpassung an neues GUI-Layout. Zentralisierung geht jetzt einigermaßen" />
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="Bilder komprimiert, immernoch langsam..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +78,7 @@
       <updated>1682525367133</updated>
       <workItem from="1682525368183" duration="425000" />
       <workItem from="1683125910384" duration="49000" />
-      <workItem from="1683393880778" duration="19530000" />
+      <workItem from="1683393880778" duration="19880000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683417281059</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Bilder komprimiert, immernoch langsam...">
+      <created>1683418002471</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683418002471</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +153,8 @@
     <MESSAGE value="mute" />
     <MESSAGE value="Layout off settings" />
     <MESSAGE value="Anpassung an neues GUI-Layout. Zentralisierung geht jetzt einigermaßen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anpassung an neues GUI-Layout. Zentralisierung geht jetzt einigermaßen" />
+    <MESSAGE value="Bilder komprimiert, immernoch langsam..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bilder komprimiert, immernoch langsam..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
