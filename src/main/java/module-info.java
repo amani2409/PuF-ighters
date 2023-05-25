@@ -4,7 +4,9 @@ module com.example.pufighters {
             
         requires org.controlsfx.controls;
                         requires org.kordamp.bootstrapfx.core;
-            
+    requires java.sql;
+    requires mysql.connector.j;
+
     opens com.example.pufighters to javafx.fxml;
     exports com.example.pufighters;
     exports com.example.pufighters.Controllers;
