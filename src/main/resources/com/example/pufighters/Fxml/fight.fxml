@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -105,19 +106,29 @@
          </AnchorPane>
          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
 
-               <ImageView fitHeight="246.0" fitWidth="240.0" layoutX="81.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="reddevil" fitHeight="141.0" fitWidth="183.0" layoutX="138.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
 
                      <Image url="@../../../../Images/playfiguren-homescreen/playfig-6.png" />
+            <effect>
+               <Glow level="0.48" />
+            </effect>
 
                </ImageView>
+         <Button fx:id="fig_translate" layoutX="140.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="translate" />
+         <Button fx:id="fig_rotate" layoutX="140.0" layoutY="107.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="rotate" />
          </AnchorPane>
          <AnchorPane layoutX="10.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
 
-               <ImageView fitHeight="356.0" fitWidth="295.0" layoutX="43.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="pinkzyklon" fitHeight="165.0" fitWidth="215.0" layoutX="123.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
 
                      <Image url="@../../../../Images/playfiguren-homescreen/playfig-1.png" />
+            <effect>
+               <Glow />
+            </effect>
 
                </ImageView>
+         <Button fx:id="fig_fade" layoutX="149.0" layoutY="45.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="fade" />
+         <Button fx:id="fig_scale" layoutX="149.0" layoutY="102.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="scale" />
          </AnchorPane>
          <AnchorPane layoutX="630.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
 

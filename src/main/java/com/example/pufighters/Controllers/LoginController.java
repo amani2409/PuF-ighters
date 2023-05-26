@@ -13,6 +13,7 @@ package com.example.pufighters.Controllers;
 
 public class LoginController {
 
+    public Label welcomeText1;
     @FXML
     private AnchorPane loginAchorpane;
 
