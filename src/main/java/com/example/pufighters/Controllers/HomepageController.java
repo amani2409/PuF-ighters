@@ -1,5 +1,6 @@
 package com.example.pufighters.Controllers;
 
+import com.example.pufighters.Model.Animation;
 import com.example.pufighters.Model.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,6 +41,6 @@ public class HomepageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        Animation.raincomet(12, homepageAchorpane);
     }
 }
