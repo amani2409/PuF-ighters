@@ -34,18 +34,18 @@ public class Main extends Application {
         //writeToDB();
         //readFromDB();
         //updateDB(3,"gurke",9);
-        deletePlayer(3);
+//        deletePlayer(2);
 
         launch();
     }
 
-    public static void writeToDB() throws SQLException {
-        String insert = "INSERT INTO player(playerid, playername, highscore)" + "VALUES(?,?,?)";
+    public static void writeToDB(String playername) throws SQLException {
+        String insert = "INSERT INTO player(playername, highscore)" + "VALUES(?,?)";
 
         preparedStatement = connection.prepareStatement(insert);
-        preparedStatement.setInt(1,4);
-        preparedStatement.setString(2,"DeleteMe");
-        preparedStatement.setInt(3,90);
+//        preparedStatement.setInt(1,1);
+        preparedStatement.setString(1, playername);
+        preparedStatement.setInt(2, 0);
         preparedStatement.executeUpdate();
     }
 
@@ -90,4 +90,22 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+    public static boolean validatePlayer(String playername) throws SQLException {
+        String query = "SELECT * FROM player where playername = ? ";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, playername);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
