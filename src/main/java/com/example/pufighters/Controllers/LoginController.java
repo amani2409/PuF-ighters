@@ -1,9 +1,6 @@
-
-
 package com.example.pufighters.Controllers;
 
-import com.example.pufighters.Helper.DbHandler;
-import com.example.pufighters.Main;
+import com.example.pufighters.Model.JdbcDB;
 import com.example.pufighters.Model.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,15 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Window;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginController extends Main {
+public class LoginController {
 
     @FXML
     private AnchorPane loginAchorpane;
@@ -42,23 +35,20 @@ public class LoginController extends Main {
     private TextField username2Text;
 
 
-    static private DbHandler dbHandler;
-    private Connection connection = null;
-    private PreparedStatement preparedStatement = null;
-    private ResultSet resultSet = null;
-
-    public void loginButtonAction(ActionEvent event) throws SQLException, IOException {
-        if (username1Text.getText().isEmpty() || username2Text.getText().isEmpty()){
+    public void loginButtonAction(ActionEvent event) throws SQLException, IOException, ClassNotFoundException {
+        if (username1Text.getText().isEmpty() || username2Text.getText().isEmpty()) {
             showAlert(AlertType.ERROR, "Form Error!", "Please enter your username");
             return;
         }
-        boolean flag = validatePlayer(username1Text.getText());
-        boolean flag2 = validatePlayer(username2Text.getText());
 
-        if (!flag) {
-            writeToDB(username1Text.getText());
-        } else if (!flag2) {
-            writeToDB(username2Text.getText());
+        JdbcDB jdcbc = new JdbcDB();
+        boolean userexists1 = jdcbc.validatePlayer(username1Text.getText());
+        boolean userexists2 = jdcbc.validatePlayer(username2Text.getText());
+
+        if (!userexists1) {
+            jdcbc.writeToDB(username1Text.getText());
+        } else if (!userexists2) {
+            jdcbc.writeToDB(username2Text.getText());
         } else {
             infoText("Login Successful! Let's go!", null, "Login " + username1Text);
             new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
@@ -66,14 +56,13 @@ public class LoginController extends Main {
 
     }
 
-    public static void infoText(String message, String headerText, String title){
+    public static void infoText(String message, String headerText, String title) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setContentText(message);
         alert.setTitle(title);
         alert.setHeaderText(headerText);
         alert.showAndWait();
     }
-
 
     public static void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
