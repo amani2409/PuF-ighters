@@ -41,6 +41,7 @@
                      <font>
                         <Font size="30.0" />
                      </font></Button>
+         <Button fx:id="try_db" mnemonicParsing="false" text="Try DB" />
 
             </VBox>
             <AnchorPane GridPane.rowIndex="1">
@@ -61,7 +62,7 @@
 
                               <Pane layoutX="136.1875" layoutY="6.0" prefHeight="120.0" prefWidth="125.0" styleClass="left-pic" stylesheets="@../../../../Styles/homepage.css" AnchorPane.rightAnchor="26.0">
 
-                                    <ImageView fitHeight="120.0" fitWidth="111.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="pink_music" fitHeight="120.0" fitWidth="111.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
 
                                           <Image url="@../../../../Images/playfiguren-homescreen/playfig-1.png" />
 
@@ -71,7 +72,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="1">
 
-                              <ImageView fitHeight="100.0" fitWidth="125.0" layoutX="138.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="bread" fitHeight="100.0" fitWidth="125.0" layoutX="138.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-2.png" />
 
@@ -79,7 +80,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="2">
 
-                              <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="137.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="25.53125">
+                              <ImageView fx:id="ghost" fitHeight="116.0" fitWidth="137.0" layoutX="137.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="25.53125">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-9.png" />
 
@@ -88,7 +89,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
 
-                              <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="118.83392333984375">
+                              <ImageView fx:id="apple" fitHeight="116.0" fitWidth="137.0" layoutX="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="118.83392333984375">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-3.png" />
 
@@ -99,7 +100,7 @@
 
                               <Pane layoutX="74.0" layoutY="5.0" prefHeight="120.0" prefWidth="125.0" styleClass="right-pic" stylesheets="@../../../../Styles/homepage.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0">
 
-                                    <ImageView fitHeight="100.0" fitWidth="125.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="red_devil" fitHeight="100.0" fitWidth="125.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
 
                                           <Image url="@../../../../Images/playfiguren-homescreen/playfig-6.png" />
 
@@ -110,7 +111,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
 
-                              <ImageView fitHeight="116.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="67.0">
+                              <ImageView fx:id="pig" fitHeight="116.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="67.0">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-8.png" />
 
@@ -119,7 +120,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2">
 
-                              <ImageView fitHeight="110.0" fitWidth="111.0" layoutX="26.0" layoutY="10.0">
+                              <ImageView fx:id="cherry" fitHeight="110.0" fitWidth="111.0" layoutX="26.0" layoutY="10.0">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-4.png" />
 
@@ -128,7 +129,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
 
-                              <ImageView fitHeight="116.0" fitWidth="64.0" layoutX="42.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="169.5562515258789">
+                              <ImageView fx:id="pumpcin" fitHeight="116.0" fitWidth="64.0" layoutX="42.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="169.5562515258789">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-5.png" />
 
@@ -137,7 +138,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
 
-                              <ImageView fitHeight="100.0" fitWidth="125.0" layoutX="23.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.5390625" AnchorPane.rightAnchor="125.0">
+                              <ImageView fx:id="wolf" fitHeight="100.0" fitWidth="125.0" layoutX="23.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.5390625" AnchorPane.rightAnchor="125.0">
 
                                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-7.png" />
 
@@ -162,7 +163,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </HBox.margin>
                                  <center>
-                                    <ImageView fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="right-pic">
+                                    <ImageView fx:id="img_player1" fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="right-pic">
 
                                           <Image url="@../../../../Images/playfiguren-homescreen/playfig-6.png" />
 
@@ -170,13 +171,12 @@
                                  </center>
                               </BorderPane>
                               <VBox>
-
-                                    <Label prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#ee089e">
+                                    <Label fx:id="highscore_player1" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#ee089e">
                                        <padding>
                                           <Insets left="10.0" />
                                        </padding>
                                     </Label>
-                                    <Label prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 1" textFill="#ff00d9">
+                                    <Label fx:id="player_name1" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 1" textFill="#ff00d9">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
@@ -212,11 +212,11 @@
 
                         <HBox>
                               <VBox>
-                                    <Label prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#e1bd08">
+                                    <Label fx:id="highscore_player2" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#e1bd08">
                                        <padding>
                                           <Insets left="10.0" />
                                        </padding></Label>
-                                    <Label prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 2" textFill="#e1bd08">
+                                    <Label fx:id="player_name2" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 2" textFill="#e1bd08">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
@@ -230,7 +230,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </HBox.margin>
                                  <center>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="img_player2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
 
                                           <Image url="@../../../../Images/playfiguren-homescreen/playfig-1.png" />
 

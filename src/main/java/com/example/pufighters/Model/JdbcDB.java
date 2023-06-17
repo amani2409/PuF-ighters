@@ -1,6 +1,10 @@
 package com.example.pufighters.Model;
 
 import com.example.pufighters.Helper.DbHandler;
+import com.mysql.cj.MysqlType;
+//import com.mysql.cj.xdevapi.*;
+import com.example.pufighters.Model.Player;
+import com.google.gson.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,17 +32,43 @@ public class JdbcDB {
         preparedStatement.executeUpdate();
     }
 
-    public static void readFromDB() throws SQLException {
+    public static String readFromDB() throws SQLException {
 
         String query = "SELECT * from player";
         PreparedStatement preparedStatement1 = connection.prepareStatement(query);
 
         ResultSet resultSet = preparedStatement1.executeQuery();
-
+        JsonObject jsonObject = new JsonObject();
+        JsonArray playerInfoWieDuWillst = new JsonArray();
         while (resultSet.next()) {
-            System.out.println("Names: " + resultSet.getString("playername") + " Highscore: " + resultSet.getString("highscore"));
+            JsonObject db = new JsonObject();
+            db.addProperty("playername", resultSet.getString("playername"));
+            db.addProperty("highscore", resultSet.getInt("highscore"));
+            playerInfoWieDuWillst.add(db);
+            System.out.println("Names: " + resultSet.getString("playername") + " Highscore: " + resultSet.getInt("highscore"));
         }
 
+        jsonObject.add("playerList", playerInfoWieDuWillst);
+        return jsonObject.toString();
+    }
+
+    public static String readFigureFromDB() throws SQLException {
+
+        String query = "SELECT * from figures";
+        PreparedStatement preparedStatement1 = connection.prepareStatement(query);
+
+        ResultSet resultSet = preparedStatement1.executeQuery();
+        JsonObject jsonObject = new JsonObject();
+        JsonArray figureInfo = new JsonArray();
+        while (resultSet.next()) {
+            JsonObject db = new JsonObject();
+            db.addProperty("figurename", resultSet.getString("figurename"));
+            figureInfo.add(db);
+            System.out.println("Figures: " + resultSet.getString("figurename"));
+        }
+
+        jsonObject.add("playerList", figureInfo);
+        return jsonObject.toString();
     }
 
     public static void updateDB(Integer playerid, String playername, Integer highscore) throws SQLException {
@@ -70,7 +100,7 @@ public class JdbcDB {
         }
     }
 
-    public static boolean validatePlayer(String playername) throws SQLException {
+    public static String validatePlayer(String playername) throws SQLException {
         String query = "SELECT * FROM player where playername = ? ";
 
         try {
@@ -78,13 +108,20 @@ public class JdbcDB {
             preparedStatement.setString(1, playername);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                return true;
+                JsonObject j = new JsonObject();
+                j.addProperty("playername", resultSet.getString("playername"));
+                j.addProperty("highscore", resultSet.getInt("highscore"));
+//                j.addProperty("img_path", resultSet.getString("img_path"));
+                System.out.println(j);
+                return j.toString();
             }
+
+            writeToDB(playername);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
 

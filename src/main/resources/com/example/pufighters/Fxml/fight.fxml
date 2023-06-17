@@ -40,7 +40,7 @@
 
                <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
 
-                     <Label layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" stylesheets="@../../../../Styles/fight.css" text="Player - 1" textFill="WHITE">
+                     <Label fx:id="playername1" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" stylesheets="@../../../../Styles/fight.css" text="Player - 1" textFill="WHITE">
                         <VBox.margin>
                            <Insets bottom="3.0" />
                         </VBox.margin>
@@ -73,7 +73,7 @@
 
                <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
-                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" text="Player - 2" textFill="WHITE">
+                     <Label fx:id="playername2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" text="Player - 2" textFill="WHITE">
                         <VBox.margin>
                            <Insets bottom="3.0" />
                         </VBox.margin>

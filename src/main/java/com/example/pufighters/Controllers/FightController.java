@@ -1,11 +1,14 @@
 package com.example.pufighters.Controllers;
 
+import com.example.pufighters.Helper.StateManager;
+import com.example.pufighters.Model.Player;
 import com.example.pufighters.Model.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -19,6 +22,10 @@ import static com.example.pufighters.Model.Animation.*;
 
 public class FightController implements Initializable {
 
+    @FXML
+    public Label playername2;
+    @FXML
+    public Label playername1;
     @FXML
     private ImageView reddevil;
     @FXML
@@ -41,6 +48,13 @@ public class FightController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Player p1 = StateManager.getPlayerList().get(0);
+        Player p2 = StateManager.getPlayerList().get(1);
+
+        playername1.setText(p1.getPlayername());
+        playername2.setText(p2.getPlayername());
+
         fig_translate.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

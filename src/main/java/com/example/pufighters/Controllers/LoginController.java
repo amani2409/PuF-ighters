@@ -1,7 +1,10 @@
 package com.example.pufighters.Controllers;
 
+import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.JdbcDB;
+import com.example.pufighters.Model.Player;
 import com.example.pufighters.Model.SwitchScene;
+import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -41,16 +44,24 @@ public class LoginController {
             return;
         }
 
-        JdbcDB jdcbc = new JdbcDB();
-        boolean userexists1 = jdcbc.validatePlayer(username1Text.getText());
-        boolean userexists2 = jdcbc.validatePlayer(username2Text.getText());
 
-        if (!userexists1) {
-            jdcbc.writeToDB(username1Text.getText());
-        } else if (!userexists2) {
-            jdcbc.writeToDB(username2Text.getText());
-        } else {
+
+        JdbcDB jdcbc = new JdbcDB();
+        String userexists1 = jdcbc.validatePlayer(username1Text.getText());
+        String userexists2 = jdcbc.validatePlayer(username2Text.getText());
+        Player player1 = new Player(username1Text.getText());
+        Player player2 = new Player(username2Text.getText());
+        Gson g = new Gson();
+        if (userexists1 != null) {
+            player1 = g.fromJson(userexists1, Player.class);
+        }
+        if (userexists2 != null) {
+            player2 = g.fromJson(userexists2, Player.class);
+        }
+        {
             infoText("Login Successful! Let's go!", null, "Login " + username1Text);
+            StateManager.addPlayerList(player1);
+            StateManager.addPlayerList(player2);
             new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
         }
 

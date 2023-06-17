@@ -6,6 +6,7 @@ module com.example.pufighters {
                         requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires mysql.connector.j;
+    requires com.google.gson;
 
     opens com.example.pufighters to javafx.fxml;
     exports com.example.pufighters;
