@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="Krass durchgezogen! Wir sind echt krass. :)">
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="ha ha ha..">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +89,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.pufighters.Main" />
+      <module name="PuF-ighters" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.pufighters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,6 +113,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -124,7 +143,7 @@
       <workItem from="1686673969755" duration="6447000" />
       <workItem from="1686817076145" duration="8000" />
       <workItem from="1686991818743" duration="22774000" />
-      <workItem from="1687083902455" duration="3033000" />
+      <workItem from="1687083902455" duration="12615000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -210,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687026004170</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ha ha ha..">
+      <created>1687091584639</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687091584640</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +266,8 @@
     <MESSAGE value="zum Testen von CRUD, wird noch in Helpers vielleicht eigene Klasse Crud ausgelagert" />
     <MESSAGE value="Animationen beim fight hinzugefügt, arbeite an weitere Animationen. Sind biher nur templates. Müssten sie an Funktionen heften, die sagen, wenn Attake ausgeführt wurde dann figur mach diese Animation. Und am besten auch die vier grund-animationen miteinander verbinden." />
     <MESSAGE value="Krass durchgezogen! Wir sind echt krass. :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Krass durchgezogen! Wir sind echt krass. :)" />
+    <MESSAGE value="ha ha ha.." />
+    <option name="LAST_COMMIT_MESSAGE" value="ha ha ha.." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

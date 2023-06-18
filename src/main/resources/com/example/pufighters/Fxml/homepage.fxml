@@ -249,7 +249,7 @@
                                  <center>
                                     <ImageView fx:id="img_player2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
 
-                                          <Image url="@../../../../Images/playfiguren-homescreen/playfig-1.png" />
+                                          <Image url="@../../../../Images/playfiguren-homescreen/playfig-9.png" />
 
                                     </ImageView>
                                  </center>

@@ -100,6 +100,43 @@ public class JdbcDB {
         }
     }
 
+    public static String getDatabyColumn(String table, String column, String value) throws SQLException {
+        String query = "SELECT * FROM "+table+" where "+column+" = ? ";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, value);
+            ResultSet resultSet = preparedStatement.executeQuery();
+//            JsonObject jo = new JsonObject();
+            JsonArray ja = new JsonArray();
+            while (resultSet.next()) {
+                JsonObject j = new JsonObject();
+                int count = resultSet.getMetaData().getColumnCount();
+                for (int i = 1; i <= count; i++) {
+                    String s = resultSet.getMetaData().getColumnName(i);
+                    int type = resultSet.getMetaData().getColumnType(i);
+                    switch (type) {
+                        case 4:
+                            j.addProperty(s, resultSet.getInt(s));
+                        default:
+                            j.addProperty(s, resultSet.getString(s));
+                    }
+                }
+                System.out.println(j);
+                ja.add(j);
+            }
+//            jo.add("dataList", ja);
+            System.out.println("---------------------"+ja);
+            return new Gson().toJson(ja);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+     return null;
+    }
+
+    private static void addRightType(JsonObject ja, ResultSet rs, int index) throws SQLException {
+
+    }
+
     public static String validatePlayer(String playername) throws SQLException {
         String query = "SELECT * FROM player where playername = ? ";
 
@@ -115,7 +152,6 @@ public class JdbcDB {
                 System.out.println(j);
                 return j.toString();
             }
-
             writeToDB(playername);
 
         } catch (SQLException e) {
