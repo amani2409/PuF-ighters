@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="ha ha ha..">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/StateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +156,7 @@
       <workItem from="1686673969755" duration="6447000" />
       <workItem from="1686817076145" duration="8000" />
       <workItem from="1686991818743" duration="22774000" />
-      <workItem from="1687083902455" duration="12615000" />
+      <workItem from="1687083902455" duration="24246000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -236,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687091584640</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ha ha ha..">
+      <created>1687101880942</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687101880942</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

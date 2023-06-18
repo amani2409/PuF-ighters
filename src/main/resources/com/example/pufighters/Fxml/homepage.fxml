@@ -61,11 +61,7 @@
 
                               <Pane layoutX="136.1875" layoutY="6.0" prefHeight="120.0" prefWidth="125.0" stylesheets="@../../../../Styles/homepage.css" AnchorPane.rightAnchor="26.0">
 
-                                    <ImageView fx:id="pink_music" fitHeight="91.0" fitWidth="83.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-
-                                          <Image url="@../../../../Images/playfiguren-homescreen/playfig-1.png" />
-
-                                    </ImageView>
+                                    <ImageView fx:id="pink_music" fitHeight="91.0" fitWidth="83.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
                   <Button fx:id="p1_f1" layoutX="-3.0" layoutY="15.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                   <Button fx:id="p2_f1" layoutX="94.0" layoutY="15.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
@@ -73,76 +69,48 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="1">
 
-                                 <ImageView fx:id="bread" fitHeight="73.0" fitWidth="75.0" layoutX="154.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
-
-                                       <Image url="@../../../../Images/playfiguren-homescreen/playfig-2.png" />
-
-                                 </ImageView>
+                                 <ImageView fx:id="bread" fitHeight="73.0" fitWidth="75.0" layoutX="154.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
                <Button fx:id="p1_f4" layoutX="120.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f4" layoutX="212.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="2">
 
-                                 <ImageView fx:id="ghost" fitHeight="73.0" fitWidth="75.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="54.0">
-
-                                       <Image url="@../../../../Images/playfiguren-homescreen/playfig-9.png" />
-
-                                 </ImageView>
+                                 <ImageView fx:id="ghost" fitHeight="73.0" fitWidth="75.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="54.0" />
                <Button fx:id="p1_f7" layoutX="120.0" layoutY="13.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f7" layoutX="210.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
 
-                              <ImageView fx:id="apple" fitHeight="73.0" fitWidth="83.0" layoutX="93.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="135.0">
-
-                                    <Image url="@../../../../Images/playfiguren-homescreen/playfig-3.png" />
-
-                              </ImageView>
+                              <ImageView fx:id="apple" fitHeight="73.0" fitWidth="83.0" layoutX="93.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="135.0" />
                <Button fx:id="p1_f2" layoutX="76.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f2" layoutX="158.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
 
-                              <ImageView fx:id="pig" fitHeight="73.0" fitWidth="93.0" layoutX="90.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.746875762939453" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
-
-                                    <Image url="@../../../../Images/playfiguren-homescreen/playfig-8.png" />
-
-                              </ImageView>
+                              <ImageView fx:id="pig" fitHeight="73.0" fitWidth="93.0" layoutX="90.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.746875762939453" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" />
                <Button fx:id="p1_f8" layoutX="55.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f8" layoutX="183.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2">
 
-                              <ImageView fx:id="cherry" fitHeight="67.0" fitWidth="70.0" layoutX="61.0" layoutY="22.0">
-
-                                    <Image url="@../../../../Images/playfiguren-homescreen/playfig-4.png" />
-
-                              </ImageView>
+                              <ImageView fx:id="cherry" fitHeight="67.0" fitWidth="70.0" layoutX="61.0" layoutY="22.0" />
                <Button fx:id="p1_f3" layoutX="35.0" layoutY="29.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f3" layoutX="131.0" layoutY="29.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
 
-                              <ImageView fx:id="pumpcin" fitHeight="82.0" fitWidth="47.0" layoutX="64.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="162.0">
-
-                                    <Image url="@../../../../Images/playfiguren-homescreen/playfig-5.png" />
-
-                              </ImageView>
+                              <ImageView fx:id="pumpcin" fitHeight="82.0" fitWidth="47.0" layoutX="64.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="162.0" />
                <Button fx:id="p1_f6" layoutX="33.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f6" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
 
-                              <ImageView fx:id="wolf" fitHeight="57.0" fitWidth="70.0" layoutX="67.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.421875" AnchorPane.rightAnchor="136.0">
-
-                                    <Image url="@../../../../Images/playfiguren-homescreen/playfig-7.png" />
-
-                              </ImageView>
+                              <ImageView fx:id="wolf" fitHeight="57.0" fitWidth="70.0" layoutX="67.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.421875" AnchorPane.rightAnchor="136.0" />
                <Button fx:id="p1_f9" layoutX="39.0" layoutY="37.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
                <Button fx:id="p2_f9" layoutX="137.0" layoutY="37.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
@@ -151,11 +119,7 @@
          
                                  <Pane layoutX="74.0" layoutY="5.0" prefHeight="120.0" prefWidth="125.0" stylesheets="@../../../../Styles/homepage.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0">
          
-                                          <ImageView fx:id="red_devil" fitHeight="73.0" fitWidth="75.0" layoutX="26.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-         
-                                                <Image url="@../../../../Images/playfiguren-homescreen/playfig-6.png" />
-         
-                                          </ImageView>
+                                          <ImageView fx:id="red_devil" fitHeight="73.0" fitWidth="75.0" layoutX="26.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
                   <Button fx:id="p2_f5" layoutX="92.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
                   <Button fx:id="p1_f5" layoutX="-3.0" layoutY="19.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
          
@@ -180,11 +144,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </HBox.margin>
                                  <center>
-                                    <ImageView fx:id="img_player1" fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="right-pic">
-
-                                          <Image url="@../../../../Images/playfiguren-homescreen/playfig-6.png" />
-
-                                    </ImageView>
+                                    <ImageView fx:id="img_player1" fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="right-pic" />
                                  </center>
                               </BorderPane>
                               <VBox>
@@ -247,11 +207,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </HBox.margin>
                                  <center>
-                                    <ImageView fx:id="img_player2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-
-                                          <Image url="@../../../../Images/playfiguren-homescreen/playfig-9.png" />
-
-                                    </ImageView>
+                                    <ImageView fx:id="img_player2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
                                  </center>
                               </BorderPane>
 

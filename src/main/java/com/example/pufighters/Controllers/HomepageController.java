@@ -15,8 +15,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Popup;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -136,15 +139,16 @@ public class HomepageController implements Initializable {
     Popup pop = new Popup();
     Label la = new Label();
 
-    public void figChoice(Button pl_fig1, Button pl_fig2, ImageView img_player1, ImageView img_player2, String fig_name1, String fig_name2) {
+    public void figChoice(Button pl_fig1, Button pl_fig2, ImageView img_player1, ImageView img_player2, String fig_name) {
 
-        Gson g = new Gson();
             System.out.println("button 1 is pressed");
             pl_fig1.setOnAction(actionEvent -> {
                 try {
-                    Figure f1 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name1), Figure[].class)[0];
+                    Figure f1 = JdbcDB.getFig(fig_name);
                     System.out.println(f1.getFigurename());
-                    img_player1.setImage(new Image(fig_path+f1.getFigurename()));
+                    InputStream in = f1.getImg().getBinaryStream();
+                    img_player1.setImage(new Image(in));
+                    StateManager.setFightFigure(1, f1);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
@@ -153,9 +157,12 @@ public class HomepageController implements Initializable {
             System.out.println("button 2 is pressed");
             pl_fig2.setOnAction(actionEvent -> {
                 try {
-                    Figure f2 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name2), Figure[].class)[0];
+//                    Figure f2 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name2), Figure[].class)[0];
+                    Figure f2 = JdbcDB.getFig(fig_name);
                     System.out.println(f2.getFigurename());
-                    img_player2.setImage(new Image(fig_path+f2.getFigurename()));
+                    InputStream in = f2.getImg().getBinaryStream();
+                    img_player2.setImage(new Image(in));
+                    StateManager.setFightFigure(2, f2);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
@@ -181,7 +188,7 @@ public class HomepageController implements Initializable {
 
             try {
                 JdbcDB.readFigureFromDB().equals("playfig-1.png");
-                System.out.println("okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -190,25 +197,49 @@ public class HomepageController implements Initializable {
 
         Animation.raincomet(12, homepageAchorpane);
 
-        Player p1 = StateManager.getPlayerList().get(0);
-        Player p2 = StateManager.getPlayerList().get(1);
+        Player p1 = StateManager.getPlayer(1);
+        Player p2 = StateManager.getPlayer(2);
 
         player_name1.setText(p1.getPlayername());
         player_name2.setText(p2.getPlayername());
         highscore_player1.setText(String.valueOf(p1.getHighscore()));
         highscore_player2.setText(String.valueOf(p2.getHighscore()));
 
+        Figure f1 = StateManager.getFightFigure(1);
+        Figure f2 = StateManager.getFightFigure(2);
 
-
-        figChoice(p1_f1, p2_f1, img_player1, img_player2, "playfig-1.png","playfig-1.png");
-        figChoice(p1_f2, p2_f2, img_player1, img_player2, "playfig-2.png","playfig-2.png");
-        figChoice(p1_f3, p2_f3, img_player1, img_player2, "playfig-3.png","playfig-3.png");
-        figChoice(p1_f4, p2_f4, img_player1, img_player2, "playfig-4.png","playfig-4.png");
-        figChoice(p1_f5, p2_f5, img_player1, img_player2, "playfig-5.png","playfig-5.png");
-        figChoice(p1_f6, p2_f6, img_player1, img_player2, "playfig-6.png","playfig-6.png");
-        figChoice(p1_f7, p2_f7, img_player1, img_player2, "playfig-7.png","playfig-7.png");
-        figChoice(p1_f8, p2_f8, img_player1, img_player2, "playfig-8.png","playfig-8.png");
-        figChoice(p1_f9, p2_f9, img_player1, img_player2, "playfig-9.png","playfig-9.png");
+        try {
+            pink_music.setImage(new Image(JdbcDB.getFig("playfig-1.png").getImg().getBinaryStream()));
+            apple.setImage(new Image(JdbcDB.getFig("playfig-2.png").getImg().getBinaryStream()));
+            cherry.setImage(new Image(JdbcDB.getFig("playfig-3.png").getImg().getBinaryStream()));
+            bread.setImage(new Image(JdbcDB.getFig("playfig-4.png").getImg().getBinaryStream()));
+            red_devil.setImage(new Image(JdbcDB.getFig("playfig-5.png").getImg().getBinaryStream()));
+            pumpcin.setImage(new Image(JdbcDB.getFig("playfig-6.png").getImg().getBinaryStream()));
+            ghost.setImage(new Image(JdbcDB.getFig("playfig-7.png").getImg().getBinaryStream()));
+            pig.setImage(new Image(JdbcDB.getFig("playfig-8.png").getImg().getBinaryStream()));
+            wolf.setImage(new Image(JdbcDB.getFig("playfig-9.png").getImg().getBinaryStream()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(f1 != null) {
+                img_player1.setImage(new Image( f1.getImg().getBinaryStream()));
+            }
+            if(f2 != null) {
+                img_player2.setImage(new Image( f2.getImg().getBinaryStream()));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        figChoice(p1_f1, p2_f1, img_player1, img_player2, "playfig-1.png");
+        figChoice(p1_f2, p2_f2, img_player1, img_player2, "playfig-2.png");
+        figChoice(p1_f3, p2_f3, img_player1, img_player2, "playfig-3.png");
+        figChoice(p1_f4, p2_f4, img_player1, img_player2, "playfig-4.png");
+        figChoice(p1_f5, p2_f5, img_player1, img_player2, "playfig-5.png");
+        figChoice(p1_f6, p2_f6, img_player1, img_player2, "playfig-6.png");
+        figChoice(p1_f7, p2_f7, img_player1, img_player2, "playfig-7.png");
+        figChoice(p1_f8, p2_f8, img_player1, img_player2, "playfig-8.png");
+        figChoice(p1_f9, p2_f9, img_player1, img_player2, "playfig-9.png");
 
 //        try_db.setOnAction(actionEvent -> {
 //            try {

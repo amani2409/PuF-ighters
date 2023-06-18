@@ -6,10 +6,9 @@ import com.mysql.cj.MysqlType;
 import com.example.pufighters.Model.Player;
 import com.google.gson.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.io.IOException;
+import java.sql.*;
+import java.util.Base64;
 
 public class JdbcDB {
     static private DbHandler dbHandler;
@@ -102,6 +101,7 @@ public class JdbcDB {
 
     public static String getDatabyColumn(String table, String column, String value) throws SQLException {
         String query = "SELECT * FROM "+table+" where "+column+" = ? ";
+        Gson g = new Gson();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, value);
@@ -114,9 +114,15 @@ public class JdbcDB {
                 for (int i = 1; i <= count; i++) {
                     String s = resultSet.getMetaData().getColumnName(i);
                     int type = resultSet.getMetaData().getColumnType(i);
+                    System.out.println("+++++++++++++++++++++++++++++++"+s+"|"+type);
                     switch (type) {
                         case 4:
                             j.addProperty(s, resultSet.getInt(s));
+                            break;
+                        case -4:
+                            String blob = new String(resultSet.getBlob(s).getBinaryStream().readAllBytes());
+                            j.addProperty(s, blob);
+                            break;
                         default:
                             j.addProperty(s, resultSet.getString(s));
                     }
@@ -129,12 +135,35 @@ public class JdbcDB {
             return new Gson().toJson(ja);
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-     return null;
+        return null;
     }
 
     private static void addRightType(JsonObject ja, ResultSet rs, int index) throws SQLException {
 
+    }
+
+    public static Figure getFig(String figurename) throws SQLException {
+        String query = "SELECT * FROM figures where figurename = ? ";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, figurename);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                Figure f = new Figure(figurename);
+                f.setImg(resultSet.getBlob("figureimg"));
+
+                return f;
+            }
+            writeToDB(figurename);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static String validatePlayer(String playername) throws SQLException {

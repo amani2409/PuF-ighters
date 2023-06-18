@@ -1,6 +1,7 @@
 package com.example.pufighters.Controllers;
 
 import com.example.pufighters.Helper.StateManager;
+import com.example.pufighters.Model.Figure;
 import com.example.pufighters.Model.Player;
 import com.example.pufighters.Model.SwitchScene;
 import javafx.event.ActionEvent;
@@ -9,11 +10,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.example.pufighters.Model.Animation;
@@ -23,13 +26,13 @@ import static com.example.pufighters.Model.Animation.*;
 public class FightController implements Initializable {
 
     @FXML
-    public Label playername2;
+    private Label playername2;
     @FXML
-    public Label playername1;
+    private Label playername1;
     @FXML
-    private ImageView reddevil;
+    private ImageView fighter1;
     @FXML
-    private ImageView pinkzyklon;
+    private ImageView fighter2;
     @FXML
     private Button fig_translate;
     @FXML
@@ -49,37 +52,48 @@ public class FightController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        Player p1 = StateManager.getPlayerList().get(0);
-        Player p2 = StateManager.getPlayerList().get(1);
+        Player p1 = StateManager.getPlayer(1);
+        Player p2 = StateManager.getPlayer(2);
+
+        Figure f1 = StateManager.getFightFigure(1);
+        Figure f2 = StateManager.getFightFigure(2);
 
         playername1.setText(p1.getPlayername());
         playername2.setText(p2.getPlayername());
 
+        try {
+            fighter1.setImage(new Image( f1.getImg().getBinaryStream()));
+            fighter2.setImage(new Image( f2.getImg().getBinaryStream()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
         fig_translate.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                tranlate(reddevil);
+                tranlate(fighter1);
             }
         });
 
         fig_rotate.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                rotate(reddevil);
+                rotate(fighter1);
             }
         });
 
         fig_fade.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                fade(pinkzyklon);
+                fade(fighter2);
             }
         });
 
         fig_scale.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                scale(pinkzyklon);
+                scale(fighter2);
             }
         });
 

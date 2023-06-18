@@ -106,9 +106,7 @@
          </AnchorPane>
          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
 
-               <ImageView fx:id="reddevil" fitHeight="141.0" fitWidth="183.0" layoutX="138.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
-
-                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-6.png" />
+               <ImageView fx:id="fighter1" fitHeight="141.0" fitWidth="183.0" layoutX="138.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                <Glow level="0.48" />
             </effect>
@@ -119,9 +117,7 @@
          </AnchorPane>
          <AnchorPane layoutX="10.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
 
-               <ImageView fx:id="pinkzyklon" fitHeight="165.0" fitWidth="215.0" layoutX="123.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-
-                     <Image url="@../../../../Images/playfiguren-homescreen/playfig-1.png" />
+               <ImageView fx:id="fighter2" fitHeight="165.0" fitWidth="215.0" layoutX="123.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                <Glow />
             </effect>

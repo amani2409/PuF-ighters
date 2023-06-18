@@ -1,7 +1,11 @@
 package com.example.pufighters.Model;
 
+import java.sql.Blob;
+
 public class Figure {
     String figurename;
+    String figureimg;
+    Blob img;
 
     public String getFigurename() {
         return figurename;
@@ -13,5 +17,21 @@ public class Figure {
 
     public Figure(String figurename) {
         this.figurename = figurename;
+    }
+
+    public String getFigureimg() {
+        return figureimg;
+    }
+
+    public void setFigureimg(String figureimg) {
+        this.figureimg = figureimg;
+    }
+
+    public Blob getImg() {
+        return img;
+    }
+
+    public void setImg(Blob img) {
+        this.img = img;
     }
 }

@@ -60,8 +60,8 @@ public class LoginController {
         }
         {
             infoText("Login Successful! Let's go!", null, "Login " + username1Text);
-            StateManager.addPlayerList(player1);
-            StateManager.addPlayerList(player2);
+            StateManager.setPlayer(1 ,player1);
+            StateManager.setPlayer(2, player2);
             new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
         }
 
