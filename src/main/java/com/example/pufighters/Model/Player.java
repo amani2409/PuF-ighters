@@ -2,7 +2,7 @@ package com.example.pufighters.Model;
 
 public class Player {
     String playername;
-    int higscore = 0;
+    int highscore = 0;
     String img_path = "/Images/user.png";
 
     public Player() {
@@ -12,9 +12,10 @@ public class Player {
     public Player(String playername) {
         this.playername = playername;
     }
-    public Player(String playername, int higscore, String img_path) {
-        this.playername = playername;
-        this.higscore = higscore;
+    public Player(String playername, int highscore, String img_path) {
+
+
+        this.highscore = highscore;
         this.img_path = img_path;
     }
 
@@ -27,12 +28,12 @@ public class Player {
         this.playername = playername;
     }
 
-    public int getHigscore() {
-        return higscore;
+    public int getHighscore() {
+        return highscore;
     }
 
-    public void setHigscore(int higscore) {
-        this.higscore = higscore;
+    public void setHighscore(int highscore) {
+        this.highscore = highscore;
     }
 
     public String getImg_path() {

@@ -16,7 +16,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Popup;
-import javafx.stage.PopupWindow;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,8 +46,6 @@ public class HomepageController implements Initializable {
     private ImageView img_player1;
     @FXML
     private ImageView img_player2;
-    @FXML
-    private Button try_db;
     @FXML
     private Label player_name1;
     @FXML
@@ -98,9 +95,19 @@ public class HomepageController implements Initializable {
         alert.show();
     }
 
+    Popup pop = new Popup();
+    Label la = new Label();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        la.setText("HIIHIHIH");
+        pig.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
+            System.out.println("pop");
+            pop.getContent().add(la);
+            pop.centerOnScreen();
+            pop.show(homepageAchorpane, 300, 300);
+        });
 
         apple.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             System.out.println("Tile pressed ");
@@ -116,18 +123,18 @@ public class HomepageController implements Initializable {
 
         player_name1.setText(p1.getPlayername());
         player_name2.setText(p2.getPlayername());
-        highscore_player1.setText(String.valueOf(p1.getHigscore()));
-        highscore_player2.setText(String.valueOf(p2.getHigscore()));
+        highscore_player1.setText(String.valueOf(p1.getHighscore()));
+        highscore_player2.setText(String.valueOf(p2.getHighscore()));
 
 
-        try_db.setOnAction(actionEvent -> {
-            try {
-                JdbcDB.readFigureFromDB();
-                img_player1.setImage(new Image("/Images/playfiguren-homescreen/playfig-2.png"));
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        });
+//        try_db.setOnAction(actionEvent -> {
+//            try {
+//                JdbcDB.readFigureFromDB();
+//                img_player1.setImage(new Image("/Images/playfiguren-homescreen/"+"playfig-1.png"));
+//            } catch (SQLException e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
 
     }
 }
