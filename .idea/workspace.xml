@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="ha ha ha..">
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="viel spaß!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/playfiguren-homescreen/playfig-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +140,8 @@
       <workItem from="1686673969755" duration="6447000" />
       <workItem from="1686817076145" duration="8000" />
       <workItem from="1686991818743" duration="22774000" />
-      <workItem from="1687083902455" duration="24246000" />
+      <workItem from="1687083902455" duration="24581000" />
+      <workItem from="1687163284308" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -256,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687101880942</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="viel spaß!!">
+      <created>1687119219512</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687119219512</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +279,8 @@
     <MESSAGE value="Animationen beim fight hinzugefügt, arbeite an weitere Animationen. Sind biher nur templates. Müssten sie an Funktionen heften, die sagen, wenn Attake ausgeführt wurde dann figur mach diese Animation. Und am besten auch die vier grund-animationen miteinander verbinden." />
     <MESSAGE value="Krass durchgezogen! Wir sind echt krass. :)" />
     <MESSAGE value="ha ha ha.." />
-    <option name="LAST_COMMIT_MESSAGE" value="ha ha ha.." />
+    <MESSAGE value="viel spaß!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="viel spaß!!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

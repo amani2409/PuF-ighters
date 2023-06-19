@@ -141,7 +141,6 @@ public class HomepageController implements Initializable {
 
     public void figChoice(Button pl_fig1, Button pl_fig2, ImageView img_player1, ImageView img_player2, String fig_name) {
 
-            System.out.println("button 1 is pressed");
             pl_fig1.setOnAction(actionEvent -> {
                 try {
                     Figure f1 = JdbcDB.getFig(fig_name);
@@ -154,7 +153,6 @@ public class HomepageController implements Initializable {
                 }
             });
 
-            System.out.println("button 2 is pressed");
             pl_fig2.setOnAction(actionEvent -> {
                 try {
 //                    Figure f2 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name2), Figure[].class)[0];
