@@ -32,7 +32,7 @@ public class SettingsController {
         muteButton.setGraphic(view);*/
 //        Image muteIcon = new Image(getClass().getResourceAsStream("Images/mute.png"));
 //        muteButton = new ToggleButton("Mute", new ImageView(muteIcon));
-      //  soundIcon.setImage(new Image("Images/mute.png"));
+        //  soundIcon.setImage(new Image("Images/mute.png"));
 /*        final ToggleButton toggle      = new ToggleButton();
         final Image        unselected  = new Image("Images/sound.png");
         final Image        selected    = new Image("Images/mute.png");
@@ -51,4 +51,3 @@ public class SettingsController {
     }
 
 }
-

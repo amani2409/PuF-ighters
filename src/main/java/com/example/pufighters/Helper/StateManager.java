@@ -28,7 +28,7 @@ public class StateManager {
     }
 
     public static Figure getFightFigure(int num) {
-       return StateManager.fightFigures.get(num);
+        return StateManager.fightFigures.get(num);
     }
 
     public static Player getPlayer(int num) {

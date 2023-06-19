@@ -17,202 +17,201 @@
 
 <AnchorPane fx:id="homepageAchorpane" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../../Styles/homepage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pufighters.Controllers.HomepageController">
 
-      <ImageView fitHeight="700.0" fitWidth="1000.0">
+    <ImageView fitHeight="700.0" fitWidth="1000.0">
 
-            <Image url="@../../../../Images/gui-hinterguende/homepage-3.jpg" />
+        <Image url="@../../../../Images/gui-hinterguende/homepage-3.jpg" />
 
-      </ImageView>
-      <GridPane alignment="CENTER" layoutX="-6.0" layoutY="-54.0" prefHeight="761.0" prefWidth="1006.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <columnConstraints>
+    </ImageView>
+    <GridPane alignment="CENTER" layoutX="-6.0" layoutY="-54.0" prefHeight="761.0" prefWidth="1006.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-         </columnConstraints>
-         <rowConstraints>
+        </columnConstraints>
+        <rowConstraints>
             <RowConstraints maxHeight="75.0" minHeight="65.0" percentHeight="17.0" prefHeight="114.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="428.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="179.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+        </rowConstraints>
 
-            <VBox alignment="CENTER" spacing="20.0" GridPane.rowIndex="2">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
+        <VBox alignment="CENTER" spacing="20.0" GridPane.rowIndex="2">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
 
-                  <Button alignment="CENTER" onAction="#onSwitchToFight" prefHeight="106.0" prefWidth="298.0" styleClass="button-startgame" stylesheets="@../../../../Styles/homepage.css" text="Start Game">
-                     <font>
-                        <Font size="30.0" />
-                     </font></Button>
+            <Button alignment="CENTER" onAction="#onSwitchToFight" prefHeight="106.0" prefWidth="298.0" styleClass="button-startgame" stylesheets="@../../../../Styles/homepage.css" text="Start Game">
+                <font>
+                    <Font size="30.0" />
+                </font></Button>
 
-            </VBox>
-            <AnchorPane GridPane.rowIndex="1">
+        </VBox>
+        <AnchorPane GridPane.rowIndex="1">
 
-                  <GridPane stylesheets="@../../../../Styles/homepage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+            <GridPane stylesheets="@../../../../Styles/homepage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
 
-                        <AnchorPane>
+                <AnchorPane>
 
-                              <Pane layoutX="136.1875" layoutY="6.0" prefHeight="120.0" prefWidth="125.0" stylesheets="@../../../../Styles/homepage.css" AnchorPane.rightAnchor="26.0">
+                    <Pane layoutX="136.1875" layoutY="6.0" prefHeight="120.0" prefWidth="125.0" stylesheets="@../../../../Styles/homepage.css" AnchorPane.rightAnchor="26.0">
 
-                                    <ImageView fx:id="pink_music" fitHeight="91.0" fitWidth="83.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="p1_f1" layoutX="-3.0" layoutY="15.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-                  <Button fx:id="p2_f1" layoutX="94.0" layoutY="15.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                        <ImageView fx:id="pink_music" fitHeight="91.0" fitWidth="83.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="p1_f1" layoutX="-3.0" layoutY="15.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                        <Button fx:id="p2_f1" layoutX="94.0" layoutY="15.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                              </Pane>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="1">
+                    </Pane>
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="1">
 
-                                 <ImageView fx:id="bread" fitHeight="73.0" fitWidth="75.0" layoutX="154.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-               <Button fx:id="p1_f4" layoutX="120.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f4" layoutX="212.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="2">
+                    <ImageView fx:id="bread" fitHeight="73.0" fitWidth="75.0" layoutX="154.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+                    <Button fx:id="p1_f4" layoutX="120.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f4" layoutX="212.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.rowIndex="2">
 
-                                 <ImageView fx:id="ghost" fitHeight="73.0" fitWidth="75.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="54.0" />
-               <Button fx:id="p1_f7" layoutX="120.0" layoutY="13.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f7" layoutX="210.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                    <ImageView fx:id="ghost" fitHeight="73.0" fitWidth="75.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="54.0" />
+                    <Button fx:id="p1_f7" layoutX="120.0" layoutY="13.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f7" layoutX="210.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
 
-                              <ImageView fx:id="apple" fitHeight="73.0" fitWidth="83.0" layoutX="93.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="135.0" />
-               <Button fx:id="p1_f2" layoutX="76.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f2" layoutX="158.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                    <ImageView fx:id="apple" fitHeight="73.0" fitWidth="83.0" layoutX="93.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="135.0" />
+                    <Button fx:id="p1_f2" layoutX="76.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f2" layoutX="158.0" layoutY="28.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
 
-                              <ImageView fx:id="pig" fitHeight="73.0" fitWidth="93.0" layoutX="90.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.746875762939453" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" />
-               <Button fx:id="p1_f8" layoutX="55.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f8" layoutX="183.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                    <ImageView fx:id="pig" fitHeight="73.0" fitWidth="93.0" layoutX="90.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.746875762939453" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" />
+                    <Button fx:id="p1_f8" layoutX="55.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f8" layoutX="183.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2">
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2">
 
-                              <ImageView fx:id="cherry" fitHeight="67.0" fitWidth="70.0" layoutX="61.0" layoutY="22.0" />
-               <Button fx:id="p1_f3" layoutX="35.0" layoutY="29.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f3" layoutX="131.0" layoutY="29.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                    <ImageView fx:id="cherry" fitHeight="67.0" fitWidth="70.0" layoutX="61.0" layoutY="22.0" />
+                    <Button fx:id="p1_f3" layoutX="35.0" layoutY="29.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f3" layoutX="131.0" layoutY="29.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
 
-                              <ImageView fx:id="pumpcin" fitHeight="82.0" fitWidth="47.0" layoutX="64.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="162.0" />
-               <Button fx:id="p1_f6" layoutX="33.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f6" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                    <ImageView fx:id="pumpcin" fitHeight="82.0" fitWidth="47.0" layoutX="64.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="162.0" />
+                    <Button fx:id="p1_f6" layoutX="33.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f6" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                </AnchorPane>
+                <AnchorPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
 
-                              <ImageView fx:id="wolf" fitHeight="57.0" fitWidth="70.0" layoutX="67.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.421875" AnchorPane.rightAnchor="136.0" />
-               <Button fx:id="p1_f9" layoutX="39.0" layoutY="37.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-               <Button fx:id="p2_f9" layoutX="137.0" layoutY="37.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                    <ImageView fx:id="wolf" fitHeight="57.0" fitWidth="70.0" layoutX="67.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.421875" AnchorPane.rightAnchor="136.0" />
+                    <Button fx:id="p1_f9" layoutX="39.0" layoutY="37.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+                    <Button fx:id="p2_f9" layoutX="137.0" layoutY="37.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
 
-                        </AnchorPane>
-                        <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
-         
-                                 <Pane layoutX="74.0" layoutY="5.0" prefHeight="120.0" prefWidth="125.0" stylesheets="@../../../../Styles/homepage.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0">
-         
-                                          <ImageView fx:id="red_devil" fitHeight="73.0" fitWidth="75.0" layoutX="26.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="p2_f5" layoutX="92.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
-                  <Button fx:id="p1_f5" layoutX="-3.0" layoutY="19.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
-         
-                                 </Pane>
-         
-                           </AnchorPane>
+                </AnchorPane>
+                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
 
-                  </GridPane>
+                    <Pane layoutX="74.0" layoutY="5.0" prefHeight="120.0" prefWidth="125.0" stylesheets="@../../../../Styles/homepage.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0">
 
-               <GridPane.margin>
-                  <Insets bottom="20.0" left="90.0" right="90.0" top="20.0" />
-               </GridPane.margin>
+                        <ImageView fx:id="red_devil" fitHeight="73.0" fitWidth="75.0" layoutX="26.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="p2_f5" layoutX="92.0" layoutY="23.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p2" />
+                        <Button fx:id="p1_f5" layoutX="-3.0" layoutY="19.0" mnemonicParsing="false" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="p1" />
+
+                    </Pane>
+
+                </AnchorPane>
+
+            </GridPane>
+
+            <GridPane.margin>
+                <Insets bottom="20.0" left="90.0" right="90.0" top="20.0" />
+            </GridPane.margin>
+        </AnchorPane>
+        <HBox alignment="CENTER" styleClass="player-section" stylesheets="@../../../../Styles/homepage.css">
+
+            <Pane prefHeight="120.0" prefWidth="267.0" stylesheets="@../../../../Styles/homepage.css">
+
+                <HBox prefHeight="120.0" prefWidth="267.0" stylesheets="@../../../../Styles/homepage.css">
+
+                    <BorderPane prefHeight="100.0" prefWidth="93.0" styleClass="right-pic" stylesheets="@../../../../Styles/homepage.css">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </HBox.margin>
+                        <center>
+                            <ImageView fx:id="img_player1" fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="right-pic" />
+                        </center>
+                    </BorderPane>
+                    <VBox>
+                        <Label fx:id="highscore_player1" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#ee089e">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="player_name1" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 1" textFill="#ff00d9">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                            <font>
+                                <Font name="System Bold" size="31.0" />
+                            </font>
+                        </Label>
+
+                    </VBox>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </HBox>
+            </Pane>
+            <Pane prefWidth="200.0" stylesheets="@../../../../Styles/homepage.css">
+
+                <HBox />
+                <Button alignment="CENTER" layoutX="30.0" layoutY="58.0" minWidth="106.0" onAction="#onSwitchToLogin" prefHeight="44.0" prefWidth="140.0" styleClass="button-setlog" text="Logout">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER" layoutX="30.0" layoutY="14.0" minWidth="106.0" onAction="#onSwitchToSettings" prefHeight="44.0" prefWidth="140.0" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="Settings" />
+
+                <HBox.margin>
+                    <Insets left="120.0" right="120.0" />
+                </HBox.margin>
+            </Pane>
+            <AnchorPane>
+                <HBox>
+                    <VBox>
+                        <Label fx:id="highscore_player2" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#e1bd08">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding></Label>
+                        <Label fx:id="player_name2" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 2" textFill="#e1bd08">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                    </VBox>
+                    <BorderPane styleClass="left-pic" stylesheets="@../../../../Styles/homepage.css">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </HBox.margin>
+                        <center>
+                            <ImageView fx:id="img_player2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                        </center>
+                    </BorderPane>
+
+                </HBox>
             </AnchorPane>
-            <HBox alignment="CENTER" styleClass="player-section" stylesheets="@../../../../Styles/homepage.css">
-
-                  <Pane prefHeight="120.0" prefWidth="267.0" stylesheets="@../../../../Styles/homepage.css">
-
-                        <HBox prefHeight="120.0" prefWidth="267.0" stylesheets="@../../../../Styles/homepage.css">
-
-                              <BorderPane prefHeight="100.0" prefWidth="93.0" styleClass="right-pic" stylesheets="@../../../../Styles/homepage.css">
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </HBox.margin>
-                                 <center>
-                                    <ImageView fx:id="img_player1" fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="right-pic" />
-                                 </center>
-                              </BorderPane>
-                              <VBox>
-                                    <Label fx:id="highscore_player1" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#ee089e">
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                    </Label>
-                                    <Label fx:id="player_name1" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 1" textFill="#ff00d9">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                       <font>
-                                          <Font name="System Bold" size="31.0" />
-                                       </font>
-                                    </Label>
-
-                              </VBox>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                  </Pane>
-                  <Pane prefWidth="200.0" stylesheets="@../../../../Styles/homepage.css">
-
-                        <HBox />
-                        <Button alignment="CENTER" layoutX="30.0" layoutY="58.0" minWidth="106.0" onAction="#onSwitchToLogin" prefHeight="44.0" prefWidth="140.0" styleClass="button-setlog" text="Logout">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="30.0" layoutY="14.0" minWidth="106.0" onAction="#onSwitchToSettings" prefHeight="44.0" prefWidth="140.0" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" text="Settings" />
-
-                     <HBox.margin>
-                        <Insets left="120.0" right="120.0" />
-                     </HBox.margin>
-                  </Pane>
-                  <AnchorPane>
-
-                        <HBox>
-                              <VBox>
-                                    <Label fx:id="highscore_player2" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Highscore" textFill="#e1bd08">
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding></Label>
-                                    <Label fx:id="player_name2" prefHeight="50.0" prefWidth="150.0" styleClass="text-play-bar" stylesheets="@../../../../Styles/homepage.css" text="Playername 2" textFill="#e1bd08">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                    </Label>
-                              </VBox>
-                              <BorderPane styleClass="left-pic" stylesheets="@../../../../Styles/homepage.css">
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </HBox.margin>
-                                 <center>
-                                    <ImageView fx:id="img_player2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
-                                 </center>
-                              </BorderPane>
-
-                        </HBox>
-                  </AnchorPane>
-            </HBox>
-      </GridPane>
+        </HBox>
+    </GridPane>
 </AnchorPane>

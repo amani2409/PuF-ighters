@@ -8,10 +8,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -44,6 +47,7 @@ public class FightController implements Initializable {
     @FXML
     private AnchorPane fightAnchorpane;
 
+
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
         new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
@@ -51,6 +55,7 @@ public class FightController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
         Player p1 = StateManager.getPlayer(1);
         Player p2 = StateManager.getPlayer(2);
@@ -61,9 +66,10 @@ public class FightController implements Initializable {
         playername1.setText(p1.getPlayername());
         playername2.setText(p2.getPlayername());
 
+
         try {
-            fighter1.setImage(new Image( f1.getImg().getBinaryStream()));
-            fighter2.setImage(new Image( f2.getImg().getBinaryStream()));
+            fighter1.setImage(new Image(f1.getImg().getBinaryStream()));
+            fighter2.setImage(new Image(f2.getImg().getBinaryStream()));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -97,5 +103,50 @@ public class FightController implements Initializable {
             }
         });
 
+
+        fightAnchorpane.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                switch (keyEvent.getCode()) {
+                    case A:
+                        fade(fighter1);
+                        System.out.println("Pressed A!");
+                        break;
+                    case S:
+                        scale(fighter1);
+                        System.out.println("Pressed S!");
+                        break;
+                    case W:
+                        rotate(fighter1);
+                        System.out.println("Pressed W!");
+                        break;
+                    case D:
+                        tranlate(fighter1);
+                        System.out.println("Pressed D!");
+                        break;
+
+                    case UP:
+                        fade(fighter1);
+                        System.out.println("Pressed UP!");
+                        break;
+                    case RIGHT:
+                        scale(fighter1);
+                        System.out.println("Pressed RIGHT!");
+                        break;
+                    case DOWN:
+                        rotate(fighter1);
+                        System.out.println("Pressed DOWN!");
+                        break;
+                    case LEFT:
+                        tranlate(fighter1);
+                        System.out.println("Pressed LEFT!");
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        });
     }
+
 }
