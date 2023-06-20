@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+//import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -55,6 +56,7 @@ public class FightController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
 
         Player p1 = StateManager.getPlayer(1);
@@ -125,20 +127,20 @@ public class FightController implements Initializable {
                         System.out.println("Pressed D!");
                         break;
 
-                    case UP:
-                        fade(fighter1);
+                    case I:
+                        fade(fighter2);
                         System.out.println("Pressed UP!");
                         break;
-                    case RIGHT:
-                        scale(fighter1);
+                    case J:
+                        scale(fighter2);
                         System.out.println("Pressed RIGHT!");
                         break;
-                    case DOWN:
-                        rotate(fighter1);
+                    case K:
+                        rotate(fighter2);
                         System.out.println("Pressed DOWN!");
                         break;
-                    case LEFT:
-                        tranlate(fighter1);
+                    case L:
+                        tranlate(fighter2);
                         System.out.println("Pressed LEFT!");
                         break;
 
