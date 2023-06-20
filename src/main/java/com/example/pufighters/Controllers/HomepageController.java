@@ -208,9 +208,9 @@ public class HomepageController implements Initializable {
 
         try {
             pink_music.setImage(new Image(JdbcDB.getFig("playfig-1.png").getImg().getBinaryStream()));
-            bread.setImage(new Image(JdbcDB.getFig("playfig-2.png").getImg().getBinaryStream()));
-            apple.setImage(new Image(JdbcDB.getFig("playfig-3.png").getImg().getBinaryStream()));
-            cherry.setImage(new Image(JdbcDB.getFig("playfig-4.png").getImg().getBinaryStream()));
+            apple.setImage(new Image(JdbcDB.getFig("playfig-2.png").getImg().getBinaryStream()));
+             cherry.setImage(new Image(JdbcDB.getFig("playfig-3.png").getImg().getBinaryStream()));
+            bread.setImage(new Image(JdbcDB.getFig("playfig-4.png").getImg().getBinaryStream()));
             pumpcin.setImage(new Image(JdbcDB.getFig("playfig-5.png").getImg().getBinaryStream()));
             red_devil.setImage(new Image(JdbcDB.getFig("playfig-6.png").getImg().getBinaryStream()));
             wolf.setImage(new Image(JdbcDB.getFig("playfig-7.png").getImg().getBinaryStream()));
