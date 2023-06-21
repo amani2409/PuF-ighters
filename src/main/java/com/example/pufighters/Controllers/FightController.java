@@ -1,9 +1,7 @@
 package com.example.pufighters.Controllers;
 
 import com.example.pufighters.Helper.StateManager;
-import com.example.pufighters.Model.Figure;
-import com.example.pufighters.Model.Player;
-import com.example.pufighters.Model.SwitchScene;
+import com.example.pufighters.Model.*;
 import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
@@ -16,23 +14,44 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.example.pufighters.Model.Animation;
 import javafx.util.Duration;
 
 import static com.example.pufighters.Model.Animation.*;
 
 public class FightController implements Initializable {
 
+    @FXML
+    private Label hp1_bar;
+    @FXML
+    private Label hp2_bar;
+    @FXML
+    private  Button a_button;
+    @FXML
+    private  Button s_button;
+    @FXML
+    private  Button d_button;
+    @FXML
+    private  Button w_button;
+    @FXML
+    private  Button i_button;
+    @FXML
+    private  Button j_button;
+    @FXML
+    private  Button k_button;
+    @FXML
+    private  Button l_button;
     @FXML
     private ImageView boom_effect;
     @FXML
@@ -48,15 +67,10 @@ public class FightController implements Initializable {
     @FXML
     private ImageView fighter2;
     @FXML
-    private Button fig_translate;
-    @FXML
-    private Button fig_rotate;
-    @FXML
-    private Button fig_fade;
-    @FXML
-    private Button fig_scale;
-    @FXML
     private AnchorPane fightAnchorpane;
+
+    private int hp1 = 100;
+    private int hp2 = 100;
 
 
     int moveToRight = 450;
@@ -66,6 +80,7 @@ public class FightController implements Initializable {
     int moveDown = 200;
 
     int timeLeft = 0;
+
     public void fadeFromePage() {
         FadeTransition fade = new FadeTransition();
         fade.setNode(fightAnchorpane);
@@ -117,32 +132,35 @@ public class FightController implements Initializable {
 
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
-            new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
+        new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
     }
 
     int i = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        fadeFromePage();
+//        fadeFromePage();
 
+/*
         timer_fight.setText(String.valueOf(i));
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-                i++;
-                timer_fight.setText(String.valueOf(i));
+            i++;
+            timer_fight.setText(String.valueOf(i));
 
-                if (i == 300) {
-                    System.out.println("Ich bin bei 5 angekommen");
-                    try {
-                        new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
+            if (i == 300) {
+                System.out.println("Ich bin bei 5 angekommen");
+                try {
+                    new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
+            }
         }));
 
         timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
         timeline.play();
+*/
 
         Player p1 = StateManager.getPlayer(1);
         Player p2 = StateManager.getPlayer(2);
@@ -162,8 +180,7 @@ public class FightController implements Initializable {
         }
 
 
-
-        fig_translate.setOnAction(new EventHandler<ActionEvent>() {
+  /*      fig_translate.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
 
@@ -183,9 +200,9 @@ public class FightController implements Initializable {
                 long fiveSeconds = 0;
                 long l = 0;
                 long dt = l - fiveSeconds;
-                    while ( dt > 5e9) {
-                        System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnoooooooooooooooooooooooooooo");
-                    }
+                while (dt > 5e9) {
+                    System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnoooooooooooooooooooooooooooo");
+                }
                 try {
                     new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
                 } catch (IOException e) {
@@ -199,64 +216,233 @@ public class FightController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 scale(fighter2, 3, 3);
             }
-        });
+        });*/
 
 
+
+        ArrayList<Character> attack = new ArrayList<Character>();
         fightAnchorpane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                switch (keyEvent.getCode()) {
-                    case A:
+//                 waterp1 = .(KeyCode.A);
+//                 firep1 = .(KeyCode.W);
+//                 plantp1 = .(KeyCode.S);
+//                 soilp1 = .(KeyCode.D);
+//
+//                 waterp2 = .(KeyCode.J);
+//                 firep2 = .(KeyCode.I);
+//                 plantp2 = .(KeyCode.K);
+//                 soilp2 = .(KeyCode.L);
 
-//                        FightController n = new FightController();
-//                        n.start();
-                        System.out.println("Pressed A!");
-//                        Animation.paraTrans3(boom_effect,mana_f1, tranlate(fighter1, leftToRight, 0), rotate(fighter1), scale(fighter1));
-//                        Animation.paraTrans3(boom_effect,mana_f1, tranlate(fighter2, rightToLeft, 0), fade(fighter1), scale(fighter1));
+                    switch (keyEvent.getCode()) {
+                        case A:
+                            attack.add('A');
+                            break;
+                        case S:
+                            attack.add('S');
+                            break;
+                        case W:
+                            attack.add('W');
+                            break;
+                        case D:
+                            attack.add('D');
+                            break;
+                        case I:
+                            attack.add('I');
+                            break;
+                        case J:
+                            attack.add('J');
+                            break;
+                        case K:
+                            attack.add('K');
+                            break;
+                        case L:
+                            attack.add('L');
+                            break;
+                        default:
+                            break;
+                    }
+
+                if (hp1 != 0 && hp2 != 0) {
+                    if (attack.contains('A') && attack.contains('I')) {
+                        hp2 -= 20;
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
                         Animation.takleOrRetrete(fighter1, moveUp);
                         Animation.takleOrRetrete(fighter2, moveToRight);
-                        break;
-                    case S:
-                        System.out.println("Pressed S!");
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                        System.out.println(attack);
+                    }
+
+                    if (attack.contains('A') && attack.contains('K')) {
+                        hp1 -= 10;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
                         Animation.walzer(fighter1, moveToRight);
-                        Animation.jumpOrDig(fighter2,moveDown);
-//                        Animation.paraTrans3(boom_effect,mana_f1, tranlate(fighter1, leftToRight, moveDown), rotate(fighter1), scale(fighter1));
-//                        Animation.paraTrans3(boom_effect,mana_f1, tranlate(fighter2, rightToLeft, moveUp), fade(fighter1), scale(fighter1));
-                        break;
-                    case W:
-//                        rotate(fighter1);
+                        Animation.jumpOrDig(fighter2, moveDown);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                        System.out.println(attack);
+
+
+                    }
+                    if (attack.contains('A') && attack.contains('L')) {
+                        hp2 -= 10;
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        rotate(fighter1);
                         Animation.arc(fighter1);
                         Animation.balloon(fighter1, 4, 4);
                         Animation.ghostBalloon(fighter2, 2, 2, 0.2, 0.5);
-                        System.out.println("Pressed W!");
-                        break;
-                    case D:
-                        tranlate(fighter1 ,0, moveToRight);
-                        System.out.println("Pressed D!");
-                        break;
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                        System.out.println(attack);
+                    }
 
-                    case I:
-                        fade(fighter2, 1, 0);
-                        System.out.println("Pressed UP!");
-                        break;
-                    case J:
-                        scale(fighter2, 3.4, 2.2);
-                        System.out.println("Pressed RIGHT!");
-                        break;
-                    case K:
-                        rotate(fighter2);
-                        System.out.println("Pressed DOWN!");
-                        break;
-                    case L:
-                        tranlate(fighter2, moveToRight, 0);
-                        System.out.println("Pressed LEFT!");
-                        break;
+                    // Player 1 = Fire
+                    if (attack.contains('W') && attack.contains('J')) {
+                        hp1 -= 20;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('W') && attack.contains('I')) {
+                        hp1 -= 10;
+                        hp2 -= 10;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('W') && attack.contains('K')) {
+                        hp2 -= 10;
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('W') && attack.contains('L')) {
+                        hp1 -= 10;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
 
-                    default:
-                        break;
+                    // Player 1 = Plant
+                    if (attack.contains('S') && attack.contains('I')) {
+                        hp2 -= 10;
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('S') && attack.contains('J')) {
+                        hp1 -= 20;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('S') && attack.contains('L')) {
+                        hp2 -= 10;
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+
+                    // Player 1 = Earth
+                    if (attack.contains('D') && attack.contains('I')) {
+                        hp1 -= 10;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('D') && attack.contains('J')) {
+                        hp2 -= 10;
+                        hp2_bar.setMaxWidth(hp2*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                    if (attack.contains('D') && attack.contains('K')) {
+                        hp1 -= 10;
+                        hp1_bar.setMaxWidth(hp1*3);
+                        System.out.println("HP of Player 1 is: " + hp1);
+                        System.out.println("HP of Player 2 is: " + hp2);
+                        System.out.println("Before clear: " + attack);
+                        attack.clear();
+                    }
+                } else {
+                    try {
+                        if (hp1 == 0){
+                            System.out.println("Player 2 wins");
+                            new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
+                            hp1 = 100;
+                            hp2 = 100;
+                            Player p1 = StateManager.getPlayer(1);
+                            Player p2 = StateManager.getPlayer(2);
+
+//                            playername1.setText(p1.getPlayername());
+                            playername1.setText(p1.getPlayername());
+                            int p1_highscore = p1.getHighscore();
+//                            System.out.println("highscore: " + p1_highscore);
+                            playername2.setText(p2.getPlayername());
+                            int p2_highscore = p2.getHighscore() + 1;
+                            p2.setHighscore(p2_highscore);
+
+//                            System.out.println("highscore: " + p2_highscore);
+//                            highscore_player1.setText(String.valueOf(p1.getHighscore()));
+//                            highscore_player2.setText(String.valueOf(p2.getHighscore()));
+//                            JdbcDB.updateDB(playername1.toString(), p1_highscore);
+//                            JdbcDB.updateDB(playername2.toString(), p2.getHighscore());
+                            System.out.println("highscore: " + p1.getHighscore());
+                            System.out.println("highscore: " + p2.getHighscore());
+                        }else{
+                            System.out.println("Player 1 wins");
+                            new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
+                            hp1 = 100;
+                            hp2 = 100;
+                            int p1_highscore = p1.getHighscore() + 1;
+                            p1.setHighscore(p1_highscore);
+//                            System.out.println("highscore: " + p1_highscore);
+                            playername2.setText(p2.getPlayername());
+                            int p2_highscore = p2.getHighscore();
+//                            System.out.println("highscore: " + p2_highscore);
+
+                            p1.setHighscore(p1_highscore);
+
+
+//                            highscore_player1.setText(String.valueOf(p1.getHighscore()));
+//                            highscore_player2.setText(String.valueOf(p2.getHighscore()));
+//                            JdbcDB.updateDB(playername1.toString(), p1.getHighscore());
+                            System.out.println("highscore: " + p1.getHighscore());
+                            System.out.println("highscore: " + p2.getHighscore());
+
+//                            JdbcDB.updateDB(playername2.toString(), p2_highscore);
+                        }
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
     }
-
 }
