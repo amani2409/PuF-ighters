@@ -11,3 +11,18 @@
 .label-hp {
     -fx-background-color: rgb(238, 126, 165);
 }
+
+.button-style {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-opacity: 70%;
+    -fx-border-color: #e5dada;
+    -fx-border-radius: 15%;
+}
+
+.button-aufgeben:hover {
+    -fx-background-color: #981111;
+    -fx-border-color: #e5dada;
+    -fx-opacity: 0;
+    -fx-border-radius: 15%;
+}

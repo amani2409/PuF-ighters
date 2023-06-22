@@ -72,7 +72,6 @@ public class JdbcDB {
 
     public static void updateDB(Integer playerid, String playername, Integer highscore) throws SQLException {
         String query = "UPDATE player SET playername = ?, highscore = ? where playerid = ?";
-
         try {
             PreparedStatement preparedStatement1 = connection.prepareStatement(query);
             preparedStatement1.setString(1, playername);

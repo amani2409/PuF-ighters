@@ -2,7 +2,6 @@ package com.example.pufighters.Controllers;
 
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.*;
-import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -14,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -23,8 +21,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javafx.util.Duration;
 
@@ -73,11 +69,7 @@ public class FightController implements Initializable {
     private int hp2 = 100;
 
 
-    int moveToRight = 450;
-    int moveToLeft = -450;
 
-    int moveUp = -200;
-    int moveDown = 200;
 
     int timeLeft = 0;
 
@@ -104,63 +96,42 @@ public class FightController implements Initializable {
         fade.play();
     }
 
-//    boolean nextPage = false;
-
-//    Timer fightTimer = new Timer();
-//    TimerTask fightTimerTask = new TimerTask() {
-//        int countdown = 10;
-//        @Override
-//        public void run() {
-//            if(countdown > 0 ) {
-//                Animation.raincomet(8, fightAnchorpane);
-//                countdown -= 1;
-//            } else {
-//               fightTimer.cancel();
-//            }
-//        }
-//    };//    public long fiveSeconds = 0;
-//    public Label timer_fight;
-//    @Override
-//    public void handle(long l) {
-//        long dt = l - fiveSeconds;
-//        if(dt > 5e9) {
-//            fiveSeconds = l;
-//            System.out.println("hi");
-//
-//        }
-//    }
 
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
         new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
     }
 
-    int i = 0;
-
+    int i = 3;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 //        fadeFromePage();
 
-/*
-        timer_fight.setText(String.valueOf(i));
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-            i++;
-            timer_fight.setText(String.valueOf(i));
 
-            if (i == 300) {
-                System.out.println("Ich bin bei 5 angekommen");
-                try {
-                    new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+//        timer_fight.setText(String.valueOf(i));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
+//            timer_fight.setText(String.valueOf(i));
+            if (i == 3) {
+                timer_fight.setText("Ready");
             }
+            if (i == 2) {
+                timer_fight.setText("Set");
+            }
+            if (i == 1) {
+                timer_fight.setText("FIGHT!");
+            }
+            if (i == 0) {
+                timer_fight.setText("");
+
+            } else {
+            }
+            i--;
         }));
 
         timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
         timeline.play();
-*/
+
 
         Player p1 = StateManager.getPlayer(1);
         Player p2 = StateManager.getPlayer(2);
@@ -178,45 +149,6 @@ public class FightController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
-  /*      fig_translate.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-
-            }
-        });
-
-        fig_rotate.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                rotate(fighter1);
-            }
-        });
-
-        fig_fade.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                long fiveSeconds = 0;
-                long l = 0;
-                long dt = l - fiveSeconds;
-                while (dt > 5e9) {
-                    System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnoooooooooooooooooooooooooooo");
-                }
-                try {
-                    new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-
-        fig_scale.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                scale(fighter2, 3, 3);
-            }
-        });*/
 
 
 
@@ -237,27 +169,35 @@ public class FightController implements Initializable {
                     switch (keyEvent.getCode()) {
                         case A:
                             attack.add('A');
+                            Animation.water_a(fighter1, a_button);
                             break;
                         case S:
                             attack.add('S');
+                            Animation.plant_s(fighter1, s_button);
                             break;
                         case W:
                             attack.add('W');
+                            Animation.feuer_w(fighter1, w_button);
                             break;
                         case D:
                             attack.add('D');
+                            Animation.solip_d(fighter1, d_button);
                             break;
                         case I:
                             attack.add('I');
+                            Animation.feuer_i(fighter2, i_button);
                             break;
                         case J:
                             attack.add('J');
+                            Animation.water_j(fighter2, j_button);
                             break;
                         case K:
                             attack.add('K');
+                            Animation.plant_k(fighter2, k_button);
                             break;
                         case L:
                             attack.add('L');
+                            Animation.solip_l(fighter2, l_button);
                             break;
                         default:
                             break;
@@ -269,8 +209,6 @@ public class FightController implements Initializable {
                         hp2_bar.setMaxWidth(hp2*3);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
-                        Animation.takleOrRetrete(fighter1, moveUp);
-                        Animation.takleOrRetrete(fighter2, moveToRight);
                         System.out.println("Before clear: " + attack);
                         attack.clear();
                         System.out.println(attack);
@@ -281,8 +219,6 @@ public class FightController implements Initializable {
                         hp1_bar.setMaxWidth(hp1*3);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
-                        Animation.walzer(fighter1, moveToRight);
-                        Animation.jumpOrDig(fighter2, moveDown);
                         System.out.println("Before clear: " + attack);
                         attack.clear();
                         System.out.println(attack);
@@ -294,10 +230,6 @@ public class FightController implements Initializable {
                         hp2_bar.setMaxWidth(hp2*3);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
-                        rotate(fighter1);
-                        Animation.arc(fighter1);
-                        Animation.balloon(fighter1, 4, 4);
-                        Animation.ghostBalloon(fighter2, 2, 2, 0.2, 0.5);
                         System.out.println("Before clear: " + attack);
                         attack.clear();
                         System.out.println(attack);
@@ -394,7 +326,7 @@ public class FightController implements Initializable {
                     try {
                         if (hp1 == 0){
                             System.out.println("Player 2 wins");
-                            new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
+                            new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
                             Player p1 = StateManager.getPlayer(1);
@@ -417,7 +349,7 @@ public class FightController implements Initializable {
                             System.out.println("highscore: " + p2.getHighscore());
                         }else{
                             System.out.println("Player 1 wins");
-                            new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
+                            new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
                             int p1_highscore = p1.getHighscore() + 1;

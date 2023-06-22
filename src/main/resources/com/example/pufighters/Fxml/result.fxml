@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="resultAncorpane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pufighters.Controllers.ResultController">
+   <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <image>
+         <Image url="@../../../../Images/gui-hinterguende/welle2.png" />
+      </image>
+   </ImageView>
+   <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <VBox prefHeight="650.0" prefWidth="414.0">
+         <ImageView fx:id="crown" fitHeight="218.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets left="100.0" />
+            </VBox.margin>
+            <image>
+               <Image url="@../../../../Images/gui-hinterguende/crown.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="winning_figter" fitHeight="198.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets left="100.0" />
+            </VBox.margin>
+         </ImageView>
+         <Label fx:id="win_name" alignment="CENTER" prefHeight="89.0" prefWidth="429.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+            <font>
+               <Font name="System Bold Italic" size="48.0" />
+            </font>
+            <effect>
+               <DropShadow height="82.2" radius="23.115000000000002" spread="0.73" width="12.26">
+                  <color>
+                     <Color red="0.21160000562667847" green="0.7684405446052551" blue="0.9200000166893005" />
+                  </color>
+               </DropShadow>
+            </effect>
+         </Label>
+         <Label fx:id="win_higscore" alignment="CENTER" layoutX="10.0" layoutY="426.0" prefHeight="89.0" prefWidth="429.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" text="Highscore" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+            <font>
+               <Font name="System Bold Italic" size="48.0" />
+            </font>
+            <effect>
+               <DropShadow height="82.2" radius="23.115000000000002" spread="0.73" width="12.26">
+                  <color>
+                     <Color red="0.21160000562667847" green="0.7684405446052551" blue="0.9200000166893005" />
+                  </color>
+               </DropShadow>
+            </effect>
+         </Label>
+      </VBox>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="314.0">
+         <children>
+            <ImageView fx:id="lost_figter" fitHeight="123.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lo_name" alignment="CENTER" prefHeight="33.0" prefWidth="314.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+               <effect>
+                  <DropShadow height="47.23" radius="14.372499999999999" spread="0.73" width="12.26">
+                     <color>
+                        <Color red="0.9200000166893005" green="0.2939334511756897" blue="0.2207999974489212" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <VBox.margin>
+                  <Insets top="350.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="los_highscore" alignment="CENTER" prefHeight="89.0" prefWidth="429.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" text="Highscore" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+               <effect>
+                  <DropShadow height="47.23" radius="14.372499999999999" spread="0.73" width="12.26">
+                     <color>
+                        <Color red="0.9200000166893005" green="0.3537699282169342" blue="0.2207999974489212" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+         <HBox.margin>
+            <Insets left="200.0" />
+         </HBox.margin>
+      </VBox>
+   </HBox>
+   <Button fx:id="to_homepage" layoutX="558.0" layoutY="16.0" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="200.0" styleClass="button-startgame" stylesheets="@../../../../Styles/homepage.css" text="Homescreen" />
+   <Button fx:id="to_fight" layoutX="769.0" layoutY="16.0" mnemonicParsing="false" onAction="#onSwitchToFight" prefHeight="35.0" prefWidth="200.0" styleClass="button-startgame" stylesheets="@../../../../Styles/homepage.css" text="Rematch" />
+</AnchorPane>

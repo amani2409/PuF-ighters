@@ -96,11 +96,6 @@ public class HomepageController implements Initializable {
 
     @FXML
     private AnchorPane homepageAchorpane;
-    Popup popup = new Popup();
-
-    String fig_path = "/Images/playfiguren-homescreen/";
-
-
 
     @FXML
     void onSwitchToLogin(ActionEvent event) throws IOException {
@@ -117,28 +112,6 @@ public class HomepageController implements Initializable {
     void onSwitchToSettings(ActionEvent event) throws IOException {
         new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
     }
-
-    public static void buttons(String message, String headerText, String title) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText(message);
-        alert.setTitle(title);
-        alert.setHeaderText(headerText);
-        alert.showAndWait();
-    }
-
-    public static void showAlert(Alert.AlertType alertType, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.show();
-    }
-
-
-
-    Popup pop = new Popup();
-    Label la = new Label();
-
     public void figChoice(Button pl_fig1, Button pl_fig2, ImageView img_player1, ImageView img_player2, String fig_name) {
 
             pl_fig1.setOnAction(actionEvent -> {
@@ -165,33 +138,10 @@ public class HomepageController implements Initializable {
                     throw new RuntimeException(e);
                 }
             });
-
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        la.setText("HIIHIHIH");
-        pig.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
-            System.out.println("pop");
-            pop.getContent().add(la);
-            pop.centerOnScreen();
-            pop.show(homepageAchorpane, 300, 300);
-        });
-
-        apple.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            System.out.println("Tile pressed ");
-            buttons("Alert.AlertType.INFORMATION", "hi", "ho");
-            img_player2.setImage(new Image("/Images/playfiguren-homescreen/playfig-6.png"));
-
-            try {
-                JdbcDB.readFigureFromDB().equals("playfig-1.png");
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            event.consume();
-        });
 
         Animation.raincomet(12, homepageAchorpane);
 
@@ -238,15 +188,5 @@ public class HomepageController implements Initializable {
         figChoice(p1_f7, p2_f7, img_player1, img_player2, "playfig-7.png");
         figChoice(p1_f8, p2_f8, img_player1, img_player2, "playfig-8.png");
         figChoice(p1_f9, p2_f9, img_player1, img_player2, "playfig-9.png");
-
-//        try_db.setOnAction(actionEvent -> {
-//            try {
-//                JdbcDB.readFigureFromDB();
-//                img_player1.setImage(new Image("/Images/playfiguren-homescreen/"+"playfig-1.png"));
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
-
     }
 }
