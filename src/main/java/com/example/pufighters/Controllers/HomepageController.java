@@ -1,5 +1,6 @@
 package com.example.pufighters.Controllers;
 
+import com.example.pufighters.Helper.HttpRequestHelper;
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.*;
 import com.google.gson.Gson;
@@ -123,12 +124,11 @@ public class HomepageController implements Initializable {
 
         pl_fig1.setOnAction(actionEvent -> {
             try {
-                Figure f1 = JdbcDB.getFig(fig_name);
+                Figure f1 = HttpRequestHelper.getFigure(fig_name);
                 System.out.println(f1.getFigurename());
-                InputStream in = f1.getImg().getBinaryStream();
-                img_player1.setImage(new Image(in));
+                img_player1.setImage(f1.getImg());
                 StateManager.setFightFigure(1, f1);
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
@@ -136,12 +136,11 @@ public class HomepageController implements Initializable {
         pl_fig2.setOnAction(actionEvent -> {
             try {
 //                    Figure f2 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name2), Figure[].class)[0];
-                Figure f2 = JdbcDB.getFig(fig_name);
+                Figure f2 = HttpRequestHelper.getFigure(fig_name);
                 System.out.println(f2.getFigurename());
-                InputStream in = f2.getImg().getBinaryStream();
-                img_player2.setImage(new Image(in));
+                img_player2.setImage(f2.getImg());
                 StateManager.setFightFigure(2, f2);
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
@@ -176,26 +175,26 @@ public class HomepageController implements Initializable {
         Figure f2 = StateManager.getFightFigure(2);
 
         try {
-            pink_music.setImage(new Image(JdbcDB.getFig("playfig-1.png").getImg().getBinaryStream()));
-            apple.setImage(new Image(JdbcDB.getFig("playfig-2.png").getImg().getBinaryStream()));
-            cherry.setImage(new Image(JdbcDB.getFig("playfig-3.png").getImg().getBinaryStream()));
-            bread.setImage(new Image(JdbcDB.getFig("playfig-4.png").getImg().getBinaryStream()));
-            pumpcin.setImage(new Image(JdbcDB.getFig("playfig-5.png").getImg().getBinaryStream()));
-            red_devil.setImage(new Image(JdbcDB.getFig("playfig-6.png").getImg().getBinaryStream()));
-            wolf.setImage(new Image(JdbcDB.getFig("playfig-7.png").getImg().getBinaryStream()));
-            pig.setImage(new Image(JdbcDB.getFig("playfig-8.png").getImg().getBinaryStream()));
-            ghost.setImage(new Image(JdbcDB.getFig("playfig-9.png").getImg().getBinaryStream()));
-        } catch (SQLException e) {
+            pink_music.setImage(HttpRequestHelper.getFigure("playfig-1.png").getImg());
+            apple.setImage(HttpRequestHelper.getFigure("playfig-2.png").getImg());
+            cherry.setImage(HttpRequestHelper.getFigure("playfig-3.png").getImg());
+            bread.setImage(HttpRequestHelper.getFigure("playfig-4.png").getImg());
+            pumpcin.setImage(HttpRequestHelper.getFigure("playfig-5.png").getImg());
+            red_devil.setImage(HttpRequestHelper.getFigure("playfig-6.png").getImg());
+            wolf.setImage(HttpRequestHelper.getFigure("playfig-7.png").getImg());
+            pig.setImage(HttpRequestHelper.getFigure("playfig-8.png").getImg());
+            ghost.setImage(HttpRequestHelper.getFigure("playfig-9.png").getImg());
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
         try {
             if (f1 != null) {
-                img_player1.setImage(new Image(f1.getImg().getBinaryStream()));
+                img_player1.setImage(f1.getImg());
             }
             if (f2 != null) {
-                img_player2.setImage(new Image(f2.getImg().getBinaryStream()));
+                img_player2.setImage(f2.getImg());
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
         figChoice(p1_f1, p2_f1, img_player1, img_player2, "playfig-1.png");

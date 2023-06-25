@@ -1,5 +1,6 @@
 package com.example.pufighters.Controllers;
 
+import com.example.pufighters.Helper.HttpRequestHelper;
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.*;
 import javafx.animation.FadeTransition;
@@ -19,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -53,8 +55,6 @@ public class FightController implements Initializable {
     @FXML
     private Label mana_f1;
     @FXML
-    private Label timer_fight;
-    @FXML
     private Label playername2;
     @FXML
     private Label playername1;
@@ -64,6 +64,8 @@ public class FightController implements Initializable {
     private ImageView fighter2;
     @FXML
     private AnchorPane fightAnchorpane;
+    @FXML
+    private Label timer_fight;
 
     private int hp1 = 100;
     private int hp2 = 100;
@@ -122,27 +124,27 @@ public class FightController implements Initializable {
 
 
 //        timer_fight.setText(String.valueOf(i));
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
-//            timer_fight.setText(String.valueOf(i));
-            if (i == 3) {
-                timer_fight.setText("Ready");
-            }
-            if (i == 2) {
-                timer_fight.setText("Set");
-            }
-            if (i == 1) {
-                timer_fight.setText("FIGHT!");
-            }
-            if (i == 0) {
-                timer_fight.setText("");
+//        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
+////            timer_fight.setText(String.valueOf(i));
+//            if (i == 3) {
+//                timer_fight.setText("Ready");
+//            }
+//            if (i == 2) {
+//                timer_fight.setText("Set");
+//            }
+//            if (i == 1) {
+//                timer_fight.setText("FIGHT!");
+//            }
+//            if (i == 0) {
+//                timer_fight.setText("");
+//
+//            } else {
+//            }
+//            i--;
+//        }));
 
-            } else {
-            }
-            i--;
-        }));
-
-        timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
-        timeline.play();
+//        timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
+//        timeline.play();
 
 
         Player p1 = StateManager.getPlayer(1);
@@ -156,9 +158,9 @@ public class FightController implements Initializable {
 
 
         try {
-            fighter1.setImage(new Image(f1.getImg().getBinaryStream()));
-            fighter2.setImage(new Image(f2.getImg().getBinaryStream()));
-        } catch (SQLException e) {
+            fighter1.setImage(f1.getImg());
+            fighter2.setImage(f2.getImg());
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
@@ -338,6 +340,8 @@ public class FightController implements Initializable {
                     try {
                         if (hp1 == 0){
                             System.out.println("Player 2 wins");
+                            StateManager.setWinner(2);
+                            p2.setHighscore(p2.getHighscore() + 1);
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
@@ -349,8 +353,10 @@ public class FightController implements Initializable {
                             int p1_highscore = p1.getHighscore();
 //                            System.out.println("highscore: " + p1_highscore);
                             playername2.setText(p2.getPlayername());
-                            int p2_highscore = p2.getHighscore() + 1;
-                            p2.setHighscore(p2_highscore);
+                            HttpRequestHelper.updateHighscore(p2.getPlayername(), p2.getHighscore());
+                            Long t = System.currentTimeMillis();
+                            HttpRequestHelper.updateHistory(new Playerhistory(p2.getPlayername(), p2.getHighscore(), t, "winner"));
+                            HttpRequestHelper.updateHistory(new Playerhistory(p1.getPlayername(), p1.getHighscore(), t, "loser"));
 
 //                            System.out.println("highscore: " + p2_highscore);
 //                            highscore_player1.setText(String.valueOf(p1.getHighscore()));
@@ -361,17 +367,19 @@ public class FightController implements Initializable {
                             System.out.println("highscore: " + p2.getHighscore());
                         }else if(hp2 == 0){
                             System.out.println("Player 1 wins");
+                            StateManager.setWinner(1);
+                            p1.setHighscore(p1.getHighscore() + 1);
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
-                            int p1_highscore = p1.getHighscore() + 1;
+                            HttpRequestHelper.updateHighscore(p1.getPlayername(), p1.getHighscore());
+                            Long t = System.currentTimeMillis();
+                            HttpRequestHelper.updateHistory(new Playerhistory(p1.getPlayername(), p1.getHighscore(), t, "winner"));
+                            HttpRequestHelper.updateHistory(new Playerhistory(p2.getPlayername(), p2.getHighscore(), t, "loser"));
+                            int p1_highscore = p1.getHighscore();
                             p1.setHighscore(p1_highscore);
 //                            System.out.println("highscore: " + p1_highscore);
                             playername2.setText(p2.getPlayername());
-                            int p2_highscore = p2.getHighscore();
-//                            System.out.println("highscore: " + p2_highscore);
-
-                            p1.setHighscore(p1_highscore);
 
 
 //                            highscore_player1.setText(String.valueOf(p1.getHighscore()));

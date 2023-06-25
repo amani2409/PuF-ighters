@@ -7,18 +7,17 @@ import com.example.pufighters.Model.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ResultController implements Initializable {
+    public Label los_highscore;
+    public Label win_higscore;
     @FXML
     private Label lo_name;
     @FXML
@@ -43,18 +42,21 @@ public class ResultController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Figure f1 = StateManager.getFightFigure(1);
-        Figure f2 = StateManager.getFightFigure(2);
-        Player p1 = StateManager.getPlayer(1);
-        Player p2 = StateManager.getPlayer(2);
+        Figure loserFig = StateManager.getFightFigure(StateManager.getWinningOrder()[1]);
+        Figure winnerFig = StateManager.getFightFigure(StateManager.getWinningOrder()[0]);
+        Player loser = StateManager.getLoser();
+        Player winner = StateManager.getWinner();
 
-        lo_name.setText(p1.getPlayername() + " has lost");
-        win_name.setText(p2.getPlayername() + " has won");
+        lo_name.setText(loser.getPlayername() + " has lost");
+        los_highscore.setText(loser.getHighscore()+"");
+        win_name.setText(winner.getPlayername() + " has won");
+        win_higscore.setText(winner.getHighscore()+"");
+
 
         try {
-            lost_figter.setImage(new Image(f1.getImg().getBinaryStream()));
-            winning_figter.setImage(new Image(f2.getImg().getBinaryStream()));
-        } catch (SQLException e) {
+            lost_figter.setImage(loserFig.getImg());
+            winning_figter.setImage(winnerFig.getImg());
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

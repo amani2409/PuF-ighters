@@ -1,5 +1,6 @@
 package com.example.pufighters.Controllers;
 
+import com.example.pufighters.Helper.HttpRequestHelper;
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.JdbcDB;
 import com.example.pufighters.Model.Music;
@@ -16,9 +17,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -48,19 +54,9 @@ public class LoginController implements Initializable {
             return;
         }
 
+        Player player1 = HttpRequestHelper.validatePlayer(username1Text.getText());
+        Player player2 = HttpRequestHelper.validatePlayer(username2Text.getText());
 
-        JdbcDB jdcbc = new JdbcDB();
-        String userexists1 = jdcbc.validatePlayer(username1Text.getText());
-        String userexists2 = jdcbc.validatePlayer(username2Text.getText());
-        Player player1 = new Player(username1Text.getText());
-        Player player2 = new Player(username2Text.getText());
-        Gson g = new Gson();
-        if (userexists1 != null) {
-            player1 = g.fromJson(userexists1, Player.class);
-        }
-        if (userexists2 != null) {
-            player2 = g.fromJson(userexists2, Player.class);
-        }
         {
             infoText("Login Successful! Let's go!", null, "Login " + username1Text);
             StateManager.setPlayer(1, player1);
@@ -69,6 +65,8 @@ public class LoginController implements Initializable {
         }
 
     }
+
+
 
     public static void infoText(String message, String headerText, String title) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -112,6 +110,9 @@ public class LoginController implements Initializable {
             music.interrupt();
             Music.autoPlay("/Sounds/epic-orchestra-6960.mp3", "stop");
         }
+
+//        HttpRequestHelper.getFigure("playfig-4.png");
+//        HttpRequestHelper.getPlayerHistory("popo");
 
     }
 

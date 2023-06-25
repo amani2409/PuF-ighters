@@ -24,10 +24,6 @@ public class Player {
         return playername;
     }
 
-    public void setPlayername(String playername) {
-        this.playername = playername;
-    }
-
     public int getHighscore() {
         return highscore;
     }
@@ -36,11 +32,4 @@ public class Player {
         this.highscore = highscore;
     }
 
-    public String getImg_path() {
-        return img_path;
-    }
-
-    public void setImg_path(String img_path) {
-        this.img_path = img_path;
-    }
 }

@@ -1,6 +1,12 @@
 package com.example.pufighters.Model;
 
+import com.example.pufighters.Helper.HttpRequestHelper;
+import javafx.scene.image.Image;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.sql.Blob;
+import java.util.Base64;
 
 public class Figure {
     String figurename;
@@ -27,8 +33,8 @@ public class Figure {
         this.figureimg = figureimg;
     }
 
-    public Blob getImg() {
-        return img;
+    public Image getImg() {
+        return new Image(new ByteArrayInputStream(Base64.getDecoder().decode(this.getFigureimg())));
     }
 
     public void setImg(Blob img) {
