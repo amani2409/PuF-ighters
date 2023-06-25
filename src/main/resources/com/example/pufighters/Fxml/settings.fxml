@@ -59,8 +59,7 @@
                     <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                 </rowConstraints>
-                <Slider GridPane.rowIndex="1"/>
-
+                <Slider fx:id="musicSlider" GridPane.rowIndex="1"/>
                 <ToggleButton fx:id="muteButton" mnemonicParsing="false" onAction="#muteToggle" prefHeight="44.0"
                               prefWidth="236.0" text="Music">
                     <graphic>

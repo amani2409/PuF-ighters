@@ -363,6 +363,8 @@ public class FightController implements Initializable {
                             System.out.println("Player 2 wins");
                             musicThread.interrupt();
                             mediaPlayer.stop();
+                            StateManager.setWinner(2);
+                            p2.setHighscore(p2.getHighscore() + 1);
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;

@@ -3,6 +3,7 @@ package com.example.pufighters.Controllers;
 import com.example.pufighters.Model.Music;
 import com.example.pufighters.Helper.HttpRequestHelper;
 import com.example.pufighters.Helper.StateManager;
+import com.example.pufighters.Model.Player;
 import com.example.pufighters.Model.Playerhistory;
 import com.example.pufighters.Model.SwitchScene;
 import javafx.beans.Observable;
@@ -99,28 +100,36 @@ public class SettingsController implements Initializable {
             Music.setMusicVolume(musicSlider.getValue()/100);
         });
 
-
-        String name1 = StateManager.getPlayer(1).getPlayername();
-        String name2 = StateManager.getPlayer(2).getPlayername();
+        Player p1 = StateManager.getPlayer(1);
+        Player p2 = StateManager.getPlayer(2);
+        String name1 = p1.getPlayername();
+        String name2 = p2.getPlayername();
         reset_his_pl1.setOnAction(event -> {
             HttpRequestHelper.updateHighscore(name1, 0);
             HttpRequestHelper.deletePlayerHistory(name1);
+            p1.setHighscore(0);
+            setList(listview_history, name1);
         });
 
         reset_his_pl2.setOnAction(event -> {
             HttpRequestHelper.updateHighscore(name2, 0);
             HttpRequestHelper.deletePlayerHistory(name2);
+            p2.setHighscore(0);
         });
 
-        List<Playerhistory> h1 = HttpRequestHelper.getPlayerHistory(name1);
         List<Playerhistory> h2 = HttpRequestHelper.getPlayerHistory(name2);
 
-        for (Playerhistory ph : h1) {
-//            Player.to
-            listview_history.getItems().add(ph.toString());
-        }
+        setList(listview_history, name1);
 //        for (Playerhistory ph : h2) {
 //            listview_history.getItems().add(ph.getPlayername()+", "+ph.getHighscore());
 //        }
+    }
+
+    public static void setList(ListView l, String name) {
+        List<Playerhistory> h1 = HttpRequestHelper.getPlayerHistory(name);
+        l.getItems().clear();
+        for (Playerhistory ph : h1) {
+            l.getItems().add(ph.toString());
+        }
     }
 }

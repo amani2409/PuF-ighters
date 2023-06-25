@@ -1,5 +1,7 @@
 package com.example.pufighters.Model;
 
+import java.util.Date;
+
 public class Playerhistory {
     String playername;
     Integer highscore;
@@ -52,6 +54,6 @@ public class Playerhistory {
 
     @Override
     public String toString() {
-        return "";
+        return playername+"|"+highscore+"|"+result+"|"+new Date(date);
     }
 }

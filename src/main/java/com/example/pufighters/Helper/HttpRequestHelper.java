@@ -51,7 +51,7 @@ public class HttpRequestHelper {
     }
 
     public static String deletePlayerHistory(String playername) {
-        String response = executeRequest("http://localhost:8080/figure?playername="+playername, "DELETE", null);
+        String response = executeRequest("http://localhost:8080/history?playername="+playername, "DELETE", null);
         return response;
     }
 

@@ -76,14 +76,9 @@ public class ResultController implements Initializable {
         Figure winnerFig = StateManager.getFightFigure(StateManager.getWinningOrder()[0]);
         Player loser = StateManager.getLoser();
         Player winner = StateManager.getWinner();
-        mediaPlayer.getVolume();
         musicThread.start();
-        System.out.println("Result Thread: " + Thread.currentThread().getName());
-
-        Figure f1 = StateManager.getFightFigure(1);
-        Figure f2 = StateManager.getFightFigure(2);
-        Player p1 = StateManager.getPlayer(1);
-        Player p2 = StateManager.getPlayer(2);
+//        mediaPlayer.getVolume();
+        System.out.println("Result Thread: " + Thread.currentThread().getName() + " " + lo_name + " "+ loser.getPlayername());
 
         lo_name.setText(loser.getPlayername() + " has lost");
         los_highscore.setText(loser.getHighscore()+"");
