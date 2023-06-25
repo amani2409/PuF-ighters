@@ -177,35 +177,8 @@ public class HomepageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    /*    new Thread(() -> {
-            try {
-                Music.autoPlay("/Sounds/epic-logo-6906.mp3", "play");
-            } catch (Exception e) {
-                System.out.println("Won't play");
-                e.printStackTrace();
-            }
-            System.out.println("Homepage Thread: " + Thread.currentThread().getName());
-
-        }).start();*/
-
-   /*     Thread musicThread = new Thread("Music Thread") {
-            public void run(){
-                try {
-                    Music.autoPlay("/Sounds/epic-logo-6906.mp3", "play");
-                } catch (Exception e) {
-                    System.out.println("Won't play");
-                    e.printStackTrace();
-                }
-                System.out.println("Homepage Thread: " + Thread.currentThread().getName());
-            }
-        };*/
-
         musicThread.start();
         System.out.println("Homepage Thread: " + Thread.currentThread().getName());
-
-//        mediaPlayer.getVolume();
-
-
 
         Animation.raincomet(12, homepageAchorpane);
 

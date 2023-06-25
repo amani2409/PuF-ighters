@@ -40,7 +40,6 @@ public class SettingsController implements Initializable {
     int musicVolume;
 
 
-
     @FXML
     void muteToggle(ActionEvent event) throws Exception {
         if(muteButton.isSelected()){
@@ -52,25 +51,6 @@ public class SettingsController implements Initializable {
             Music.setMusicVolume(100);
         }
 
-
-
-
-/*        Image muteIcon = new Image("Images/user.png");
-        ImageView view = new ImageView(muteIcon);
-        muteButton.setGraphic(view);*/
-//        Image muteIcon = new Image(getClass().getResourceAsStream("Images/mute.png"));
-//        muteButton = new ToggleButton("Mute", new ImageView(muteIcon));
-        //  soundIcon.setImage(new Image("Images/mute.png"));
-/*        final ToggleButton toggle      = new ToggleButton();
-        final Image        unselected  = new Image("Images/sound.png");
-        final Image        selected    = new Image("Images/mute.png");
-        final ImageView    toggleImage = new ImageView();
-        toggle.setGraphic(toggleImage);
-        toggleImage.imageProperty().bind(Bindings
-                .when(toggle.selectedProperty())
-                .then(selected)
-                .otherwise(unselected)
-        );*/
     }
 
     @FXML

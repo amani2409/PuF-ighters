@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="background sound is playing, but it continues while changing the scene and music...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/MultiThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/badass-victory-85546.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/fightscene-76761.mp3" afterDir="false" />
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="background is working and changing the volume">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Playerhistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/login.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +152,7 @@
       <workItem from="1687083902455" duration="24581000" />
       <workItem from="1687163284308" duration="347000" />
       <workItem from="1687251271148" duration="2981000" />
-      <workItem from="1687679173714" duration="17837000" />
+      <workItem from="1687679173714" duration="20237000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -285,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687691811295</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="background is working and changing the volume">
+      <created>1687708818960</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687708818960</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +325,8 @@
     <MESSAGE value="KeyInput in FightController &#10;Only WASD is working !!" />
     <MESSAGE value="blub" />
     <MESSAGE value="background sound is playing, but it continues while changing the scene and music..." />
-    <option name="LAST_COMMIT_MESSAGE" value="background sound is playing, but it continues while changing the scene and music..." />
+    <MESSAGE value="background is working and changing the volume" />
+    <option name="LAST_COMMIT_MESSAGE" value="background is working and changing the volume" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -138,8 +138,6 @@ public class FightController implements Initializable {
         musicThread.start();
         System.out.println("Fight Thread: " + Thread.currentThread().getName());
 
-
-
 //        fadeFromePage();
 
 
@@ -237,10 +235,12 @@ public class FightController implements Initializable {
                         break;
                 }
 
+                int hpDamage = 3;
+
                 if (hp1 != 0 && hp2 != 0) {
                     if (attack.contains('A') && attack.contains('I')) {
                         hp2 -= 20;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -250,7 +250,7 @@ public class FightController implements Initializable {
 
                     if (attack.contains('A') && attack.contains('K')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -261,7 +261,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('A') && attack.contains('L')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -272,7 +272,7 @@ public class FightController implements Initializable {
                     // Player 1 = Fire
                     if (attack.contains('W') && attack.contains('J')) {
                         hp1 -= 20;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -281,8 +281,8 @@ public class FightController implements Initializable {
                     if (attack.contains('W') && attack.contains('I')) {
                         hp1 -= 10;
                         hp2 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -290,7 +290,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('W') && attack.contains('K')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -298,7 +298,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('W') && attack.contains('L')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -308,7 +308,7 @@ public class FightController implements Initializable {
                     // Player 1 = Plant
                     if (attack.contains('S') && attack.contains('I')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -316,7 +316,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('S') && attack.contains('J')) {
                         hp1 -= 20;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -324,7 +324,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('S') && attack.contains('L')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -334,7 +334,7 @@ public class FightController implements Initializable {
                     // Player 1 = Earth
                     if (attack.contains('D') && attack.contains('I')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -342,7 +342,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('D') && attack.contains('J')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -350,7 +350,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('D') && attack.contains('K')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -398,7 +398,6 @@ public class FightController implements Initializable {
 //                            System.out.println("highscore: " + p2_highscore);
 
                             p1.setHighscore(p1_highscore);
-
 
 //                            highscore_player1.setText(String.valueOf(p1.getHighscore()));
 //                            highscore_player2.setText(String.valueOf(p2.getHighscore()));
