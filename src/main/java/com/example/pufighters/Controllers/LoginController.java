@@ -2,11 +2,13 @@ package com.example.pufighters.Controllers;
 
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.JdbcDB;
+import com.example.pufighters.Model.Music;
 import com.example.pufighters.Model.Player;
 import com.example.pufighters.Model.SwitchScene;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -15,9 +17,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     @FXML
     private AnchorPane loginAchorpane;
@@ -45,7 +49,6 @@ public class LoginController {
         }
 
 
-
         JdbcDB jdcbc = new JdbcDB();
         String userexists1 = jdcbc.validatePlayer(username1Text.getText());
         String userexists2 = jdcbc.validatePlayer(username2Text.getText());
@@ -60,7 +63,7 @@ public class LoginController {
         }
         {
             infoText("Login Successful! Let's go!", null, "Login " + username1Text);
-            StateManager.setPlayer(1 ,player1);
+            StateManager.setPlayer(1, player1);
             StateManager.setPlayer(2, player2);
             new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
         }
@@ -85,7 +88,49 @@ public class LoginController {
 
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
+
         new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Thread music = new Thread();
+
+        music.start();
+        while (music.isAlive()) {
+            try {
+                Music.autoPlay("/Sounds/epic-orchestra-6960.mp3", "play");
+            } catch (Exception e) {
+                System.out.println("Won't play");
+                e.printStackTrace();
+            }
+
+        }
+
+        if (login_button.isPressed()){
+            music.interrupt();
+            Music.autoPlay("/Sounds/epic-orchestra-6960.mp3", "stop");
+        }
+
+    }
+
 }
+    /*
+
+        () -> {
+            try {
+                Music.autoPlay("/Sounds/epic-orchestra-6960.mp3");
+            } catch (Exception e) {
+                System.out.println("Won't play");
+                e.printStackTrace();
+            }
+        }).start();
+
+        Thread.st;
+        Music.stopMusic("/Sounds/epic-orchestra-6960.mp3");
+
+        stop*/
+
+
+

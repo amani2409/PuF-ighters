@@ -19,7 +19,7 @@
 <AnchorPane fx:id="fightAnchorpane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pufighters.Controllers.FightController">
    <ImageView fitHeight="700.0" fitWidth="1000.0">
 
-         <Image url="@../../../../Images/gui-hinterguende/homepage-1.jpg" />
+      <Image url="@../../../../Images/gui-hinterguende/homepage-1.jpg" />
 
    </ImageView>
    <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -33,83 +33,83 @@
          <RowConstraints maxHeight="513.0" minHeight="316.0" prefHeight="296.0" vgrow="SOMETIMES" />
       </rowConstraints>
 
-         <Pane GridPane.columnIndex="1" />
-         <AnchorPane>
+      <Pane GridPane.columnIndex="1" />
+      <AnchorPane>
 
-               <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
+         <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
 
-                     <Label fx:id="playername1" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" stylesheets="@../../../../Styles/fight.css" text="Player - 1" textFill="WHITE">
-                        <VBox.margin>
-                           <Insets bottom="3.0" />
-                        </VBox.margin>
-                     </Label>
-                     <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="300.0" styleClass="label-hp" stylesheets="@../../../../Styles/fight.css" text="HP">
-                        <VBox.margin>
-                           <Insets bottom="3.0" />
-                        </VBox.margin>
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                     <Label fx:id="mana_f1" prefHeight="30.0" prefWidth="300.0" styleClass="label-mana" stylesheets="@../../../../Styles/fight.css" text="Mana">
-                        <VBox.margin>
-                           <Insets bottom="8.0" />
-                        </VBox.margin>
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                  
-                                 <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="80.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" />
+            <Label fx:id="playername1" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" stylesheets="@../../../../Styles/fight.css" text="Player - 1" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="3.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="hp1_bar" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="300.0" styleClass="label-hp" stylesheets="@../../../../Styles/fight.css" text="HP">
+               <VBox.margin>
+                  <Insets bottom="3.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="mana_f1" prefHeight="30.0" prefWidth="300.0" styleClass="label-mana" stylesheets="@../../../../Styles/fight.css" text="Mana">
+               <VBox.margin>
+                  <Insets bottom="8.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
 
-                  <padding>
-                     <Insets left="10.0" top="10.0" />
-                  </padding>
-               </VBox>
-         </AnchorPane>
-         <AnchorPane layoutX="10.0" layoutY="11.0" GridPane.columnIndex="2">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="80.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" />
 
-               <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+               <Insets left="10.0" top="10.0" />
+            </padding>
+         </VBox>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="11.0" GridPane.columnIndex="2">
 
-                     <Label fx:id="playername2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" text="Player - 2" textFill="WHITE">
-                        <VBox.margin>
-                           <Insets bottom="3.0" />
-                        </VBox.margin>
-                     </Label>
-                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="300.0" styleClass="label-hp" stylesheets="@../../../../Styles/fight.css" text="HP">
-                        <padding>
-                           <Insets right="10.0" />
-                        </padding>
-                        <VBox.margin>
-                           <Insets bottom="3.0" />
-                        </VBox.margin>
-                     </Label>
-                     <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="300.0" styleClass="label-mana" stylesheets="@../../../../Styles/fight.css" text="Mana">
-                        <padding>
-                           <Insets right="10.0" />
-                        </padding>
-                        <VBox.margin>
-                           <Insets bottom="8.0" />
-                        </VBox.margin>
-                     </Label>
-                     <AnchorPane>
+         <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
-                           <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="80.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" textAlignment="CENTER" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+            <Label fx:id="playername2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="52.0" prefHeight="30.0" prefWidth="300.0" text="Player - 2" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="3.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="hp2_bar" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="300.0" styleClass="label-hp" stylesheets="@../../../../Styles/fight.css" text="HP">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="3.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="300.0" styleClass="label-mana" stylesheets="@../../../../Styles/fight.css" text="Mana">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="8.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane>
 
-                     </AnchorPane>
-                  <padding>
-                     <Insets right="10.0" top="10.0" />
-                  </padding>
-               </VBox>
-         </AnchorPane>
-         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="80.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" textAlignment="CENTER" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
 
-               <ImageView fx:id="fighter1" fitHeight="141.0" fitWidth="183.0" layoutX="138.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+            </AnchorPane>
+            <padding>
+               <Insets right="10.0" top="10.0" />
+            </padding>
+         </VBox>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+
+         <ImageView fx:id="fighter1" fitHeight="141.0" fitWidth="183.0" layoutX="138.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                <Glow level="0.48" />
             </effect>
 
-               </ImageView>
+         </ImageView>
          <Button fx:id="a_button" layoutX="65.0" layoutY="445.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="A">
             <effect>
                <DropShadow height="170.0" radius="47.25">
@@ -142,15 +142,15 @@
                   </color>
                </DropShadow>
             </effect></Button>
-         </AnchorPane>
-         <AnchorPane layoutX="10.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
 
-               <ImageView fx:id="fighter2" fitHeight="165.0" fitWidth="215.0" layoutX="123.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fx:id="fighter2" fitHeight="165.0" fitWidth="215.0" layoutX="123.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                <Glow />
             </effect>
 
-               </ImageView>
+         </ImageView>
          <Button fx:id="i_button" layoutX="150.0" layoutY="445.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="I">
             <effect>
                <DropShadow height="144.1" radius="40.775">
@@ -183,18 +183,18 @@
                   </color>
                </DropShadow>
             </effect></Button>
-         </AnchorPane>
-         <AnchorPane layoutX="630.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      </AnchorPane>
+      <AnchorPane layoutX="630.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
 
-               <ImageView fx:id="boom_effect" fitHeight="225.0" fitWidth="240.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <ImageView fx:id="boom_effect" fitHeight="225.0" fitWidth="240.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
 
-                     <Image url="@../../../../Images/hit-1.png" />
+            <Image url="@../../../../Images/hit-1.png" />
 
-               </ImageView>
-               <Label fx:id="timer_fight" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="112.0" prefHeight="105.0" prefWidth="140.0" text="" textAlignment="CENTER" textFill="WHITE">
+         </ImageView>
+         <Label fx:id="timer_fight" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="112.0" prefHeight="105.0" prefWidth="140.0" text="" textAlignment="CENTER" textFill="WHITE">
             <font>
                <Font size="36.0" />
             </font></Label>
-         </AnchorPane>
+      </AnchorPane>
    </GridPane>
 </AnchorPane>

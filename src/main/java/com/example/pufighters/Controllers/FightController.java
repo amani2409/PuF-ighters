@@ -106,6 +106,18 @@ public class FightController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        new Thread(() -> {
+            try {
+                Music.autoPlay("/Sounds/battle-march-action-loop-6935.mp3", "play");
+            } catch (Exception e) {
+                System.out.println("Won't play");
+                e.printStackTrace();
+            }
+        }).start();
+        Music.autoPlay("/Sounds/battle-march-action-loop-6935.mp3", "stop");
+
+
+
 //        fadeFromePage();
 
 
@@ -152,7 +164,7 @@ public class FightController implements Initializable {
 
 
 
-        ArrayList<Character> attack = new ArrayList<Character>();
+        ArrayList<Character> attack = new ArrayList<>();
         fightAnchorpane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
@@ -166,42 +178,42 @@ public class FightController implements Initializable {
 //                 plantp2 = .(KeyCode.K);
 //                 soilp2 = .(KeyCode.L);
 
-                    switch (keyEvent.getCode()) {
-                        case A:
-                            attack.add('A');
-                            Animation.water_a(fighter1, a_button);
-                            break;
-                        case S:
-                            attack.add('S');
-                            Animation.plant_s(fighter1, s_button);
-                            break;
-                        case W:
-                            attack.add('W');
-                            Animation.feuer_w(fighter1, w_button);
-                            break;
-                        case D:
-                            attack.add('D');
-                            Animation.solip_d(fighter1, d_button);
-                            break;
-                        case I:
-                            attack.add('I');
-                            Animation.feuer_i(fighter2, i_button);
-                            break;
-                        case J:
-                            attack.add('J');
-                            Animation.water_j(fighter2, j_button);
-                            break;
-                        case K:
-                            attack.add('K');
-                            Animation.plant_k(fighter2, k_button);
-                            break;
-                        case L:
-                            attack.add('L');
-                            Animation.solip_l(fighter2, l_button);
-                            break;
-                        default:
-                            break;
-                    }
+                switch (keyEvent.getCode()) {
+                    case A:
+                        attack.add('A');
+                        Animation.water_a(fighter1, a_button);
+                        break;
+                    case S:
+                        attack.add('S');
+                        Animation.plant_s(fighter1, s_button);
+                        break;
+                    case W:
+                        attack.add('W');
+                        Animation.feuer_w(fighter1, w_button);
+                        break;
+                    case D:
+                        attack.add('D');
+                        Animation.solip_d(fighter1, d_button);
+                        break;
+                    case I:
+                        attack.add('I');
+                        Animation.feuer_i(fighter2, i_button);
+                        break;
+                    case J:
+                        attack.add('J');
+                        Animation.water_j(fighter2, j_button);
+                        break;
+                    case K:
+                        attack.add('K');
+                        Animation.plant_k(fighter2, k_button);
+                        break;
+                    case L:
+                        attack.add('L');
+                        Animation.solip_l(fighter2, l_button);
+                        break;
+                    default:
+                        break;
+                }
 
                 if (hp1 != 0 && hp2 != 0) {
                     if (attack.contains('A') && attack.contains('I')) {
@@ -347,7 +359,7 @@ public class FightController implements Initializable {
 //                            JdbcDB.updateDB(playername2.toString(), p2.getHighscore());
                             System.out.println("highscore: " + p1.getHighscore());
                             System.out.println("highscore: " + p2.getHighscore());
-                        }else{
+                        }else if(hp2 == 0){
                             System.out.println("Player 1 wins");
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;

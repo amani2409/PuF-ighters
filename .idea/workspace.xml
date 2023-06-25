@@ -5,20 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="blub">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/crown-307967_640.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/crown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/welle1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/welle2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/result.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/battle-march-action-loop-6935.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/epic-logo-6906.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/epic-orchestra-6960.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/soft-laughing-6445.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/start.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/fight.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/fight.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +32,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -58,41 +62,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.33.jar&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "W:/Uni/5. Semester/Patterns and Frameworks/PuF-ighters_dummy/src/main/resources/Sounds",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters_dummy\src\main\resources\Sounds" />
       <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources\Images" />
       <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources\Images\playfiguren-homescreen" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters_dummy\src\main\resources\Sounds" />
+      <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters_dummy\src\main\resources\Images" />
+      <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters_dummy\src\main\resources" />
       <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters\src\main\resources\Images" />
       <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters\src\main\resources\com\example\pufighters\Fxml" />
-      <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources" />
-      <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources\com\example\pufighters\Fxml" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.pufighters.Model" />
@@ -156,6 +162,7 @@
       <workItem from="1687083902455" duration="24581000" />
       <workItem from="1687163284308" duration="347000" />
       <workItem from="1687251271148" duration="2981000" />
+      <workItem from="1687679173714" duration="11192000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -281,6 +288,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.mp3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

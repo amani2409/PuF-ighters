@@ -13,17 +13,23 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Popup;
+import javafx.util.Duration;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class HomepageController implements Initializable {
+
 
     @FXML
     private Button p1_f1;
@@ -107,41 +113,54 @@ public class HomepageController implements Initializable {
         new SwitchScene(homepageAchorpane, "Fxml/fight.fxml");
     }
 
-        //
+    //
     @FXML
     void onSwitchToSettings(ActionEvent event) throws IOException {
         new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
     }
+
     public void figChoice(Button pl_fig1, Button pl_fig2, ImageView img_player1, ImageView img_player2, String fig_name) {
 
-            pl_fig1.setOnAction(actionEvent -> {
-                try {
-                    Figure f1 = JdbcDB.getFig(fig_name);
-                    System.out.println(f1.getFigurename());
-                    InputStream in = f1.getImg().getBinaryStream();
-                    img_player1.setImage(new Image(in));
-                    StateManager.setFightFigure(1, f1);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+        pl_fig1.setOnAction(actionEvent -> {
+            try {
+                Figure f1 = JdbcDB.getFig(fig_name);
+                System.out.println(f1.getFigurename());
+                InputStream in = f1.getImg().getBinaryStream();
+                img_player1.setImage(new Image(in));
+                StateManager.setFightFigure(1, f1);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
-            pl_fig2.setOnAction(actionEvent -> {
-                try {
+        pl_fig2.setOnAction(actionEvent -> {
+            try {
 //                    Figure f2 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name2), Figure[].class)[0];
-                    Figure f2 = JdbcDB.getFig(fig_name);
-                    System.out.println(f2.getFigurename());
-                    InputStream in = f2.getImg().getBinaryStream();
-                    img_player2.setImage(new Image(in));
-                    StateManager.setFightFigure(2, f2);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+                Figure f2 = JdbcDB.getFig(fig_name);
+                System.out.println(f2.getFigurename());
+                InputStream in = f2.getImg().getBinaryStream();
+                img_player2.setImage(new Image(in));
+                StateManager.setFightFigure(2, f2);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        new Thread(() -> {
+            try {
+                Music.autoPlay("/Sounds/epic-logo-6906.mp3", "play");
+            } catch (Exception e) {
+                System.out.println("Won't play");
+                e.printStackTrace();
+            }
+        }).start();
+        Music.autoPlay("/Sounds/epic-logo-6906.mp3", "stop");
+
 
         Animation.raincomet(12, homepageAchorpane);
 
@@ -159,7 +178,7 @@ public class HomepageController implements Initializable {
         try {
             pink_music.setImage(new Image(JdbcDB.getFig("playfig-1.png").getImg().getBinaryStream()));
             apple.setImage(new Image(JdbcDB.getFig("playfig-2.png").getImg().getBinaryStream()));
-             cherry.setImage(new Image(JdbcDB.getFig("playfig-3.png").getImg().getBinaryStream()));
+            cherry.setImage(new Image(JdbcDB.getFig("playfig-3.png").getImg().getBinaryStream()));
             bread.setImage(new Image(JdbcDB.getFig("playfig-4.png").getImg().getBinaryStream()));
             pumpcin.setImage(new Image(JdbcDB.getFig("playfig-5.png").getImg().getBinaryStream()));
             red_devil.setImage(new Image(JdbcDB.getFig("playfig-6.png").getImg().getBinaryStream()));
@@ -170,11 +189,11 @@ public class HomepageController implements Initializable {
             throw new RuntimeException(e);
         }
         try {
-            if(f1 != null) {
-                img_player1.setImage(new Image( f1.getImg().getBinaryStream()));
+            if (f1 != null) {
+                img_player1.setImage(new Image(f1.getImg().getBinaryStream()));
             }
-            if(f2 != null) {
-                img_player2.setImage(new Image( f2.getImg().getBinaryStream()));
+            if (f2 != null) {
+                img_player2.setImage(new Image(f2.getImg().getBinaryStream()));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -189,4 +208,5 @@ public class HomepageController implements Initializable {
         figChoice(p1_f8, p2_f8, img_player1, img_player2, "playfig-8.png");
         figChoice(p1_f9, p2_f9, img_player1, img_player2, "playfig-9.png");
     }
+
 }
