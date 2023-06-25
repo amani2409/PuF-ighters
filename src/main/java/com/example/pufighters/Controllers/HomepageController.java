@@ -104,19 +104,29 @@ public class HomepageController implements Initializable {
     @FXML
     private AnchorPane homepageAchorpane;
 
+    String fileName = "/Sounds/epic-logo-6906.mp3";
+
+    MediaPlayer mediaPlayer;
+
     @FXML
     void onSwitchToLogin(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(homepageAchorpane, "Fxml/login.fxml");
     }
 
     @FXML
     void onSwitchToFight(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(homepageAchorpane, "Fxml/fight.fxml");
     }
 
     //
     @FXML
     void onSwitchToSettings(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
     }
 
@@ -147,19 +157,27 @@ public class HomepageController implements Initializable {
 
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        new Thread(() -> {
+    Thread musicThread = new Thread("Music Thread in Homepage") {
+        public void run() {
             try {
-                Music.autoPlay("/Sounds/epic-logo-6906.mp3", "play");
+                Media media = new Media(getClass().getResource(fileName).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                mediaPlayer.setAutoPlay(true);
+                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                mediaPlayer.setVolume(Music.getMusicVolume());
+                mediaPlayer.play();
             } catch (Exception e) {
                 System.out.println("Won't play");
                 e.printStackTrace();
             }
-        }).start();
-        Music.autoPlay("/Sounds/epic-logo-6906.mp3", "stop");
+            System.out.println("Homepage Thread: " + Thread.currentThread().getName());
+        }
+    };
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        musicThread.start();
+        System.out.println("Homepage Thread: " + Thread.currentThread().getName());
 
         Animation.raincomet(12, homepageAchorpane);
 
@@ -206,6 +224,7 @@ public class HomepageController implements Initializable {
         figChoice(p1_f7, p2_f7, img_player1, img_player2, "playfig-7.png");
         figChoice(p1_f8, p2_f8, img_player1, img_player2, "playfig-8.png");
         figChoice(p1_f9, p2_f9, img_player1, img_player2, "playfig-9.png");
+
     }
 
 }

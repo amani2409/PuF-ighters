@@ -20,10 +20,11 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import static com.example.pufighters.Model.Animation.*;
@@ -55,6 +56,8 @@ public class FightController implements Initializable {
     @FXML
     private Label mana_f1;
     @FXML
+    private Label timer_fight;
+    @FXML
     private Label playername2;
     @FXML
     private Label playername1;
@@ -64,8 +67,10 @@ public class FightController implements Initializable {
     private ImageView fighter2;
     @FXML
     private AnchorPane fightAnchorpane;
-    @FXML
-    private Label timer_fight;
+
+    String fileName = "/Sounds/battle-march-action-loop-6935.mp3";
+
+    MediaPlayer mediaPlayer;
 
     private int hp1 = 100;
     private int hp2 = 100;
@@ -88,6 +93,8 @@ public class FightController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 System.out.println("angekommen im Fade aus der Seite Event");
                 try {
+                    musicThread.interrupt();
+                    mediaPlayer.stop();
                     new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -101,50 +108,62 @@ public class FightController implements Initializable {
 
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
     }
 
-    int i = 3;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        new Thread(() -> {
+    Thread musicThread = new Thread("Music Thread in Fight") {
+        public void run() {
             try {
-                Music.autoPlay("/Sounds/battle-march-action-loop-6935.mp3", "play");
+                Media media = new Media(getClass().getResource(fileName).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                mediaPlayer.setAutoPlay(true);
+                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                mediaPlayer.setVolume(Music.getMusicVolume());
+                mediaPlayer.play();
             } catch (Exception e) {
                 System.out.println("Won't play");
                 e.printStackTrace();
             }
-        }).start();
-        Music.autoPlay("/Sounds/battle-march-action-loop-6935.mp3", "stop");
+            System.out.println("Fight Thread: " + Thread.currentThread().getName());
+        }
+    };
 
 
+
+    int i = 3;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        musicThread.start();
+        System.out.println("Fight Thread: " + Thread.currentThread().getName());
 
 //        fadeFromePage();
 
 
 //        timer_fight.setText(String.valueOf(i));
-//        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
-////            timer_fight.setText(String.valueOf(i));
-//            if (i == 3) {
-//                timer_fight.setText("Ready");
-//            }
-//            if (i == 2) {
-//                timer_fight.setText("Set");
-//            }
-//            if (i == 1) {
-//                timer_fight.setText("FIGHT!");
-//            }
-//            if (i == 0) {
-//                timer_fight.setText("");
-//
-//            } else {
-//            }
-//            i--;
-//        }));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
+//            timer_fight.setText(String.valueOf(i));
+            if (i == 3) {
+                timer_fight.setText("Ready");
+            }
+            if (i == 2) {
+                timer_fight.setText("Set");
+            }
+            if (i == 1) {
+                timer_fight.setText("FIGHT!");
+            }
+            if (i == 0) {
+                timer_fight.setText("");
 
-//        timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
-//        timeline.play();
+            } else {
+            }
+            i--;
+        }));
+
+        timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
+        timeline.play();
 
 
         Player p1 = StateManager.getPlayer(1);
@@ -217,10 +236,12 @@ public class FightController implements Initializable {
                         break;
                 }
 
+                int hpDamage = 3;
+
                 if (hp1 != 0 && hp2 != 0) {
                     if (attack.contains('A') && attack.contains('I')) {
                         hp2 -= 20;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -230,7 +251,7 @@ public class FightController implements Initializable {
 
                     if (attack.contains('A') && attack.contains('K')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -241,7 +262,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('A') && attack.contains('L')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -252,7 +273,7 @@ public class FightController implements Initializable {
                     // Player 1 = Fire
                     if (attack.contains('W') && attack.contains('J')) {
                         hp1 -= 20;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -261,8 +282,8 @@ public class FightController implements Initializable {
                     if (attack.contains('W') && attack.contains('I')) {
                         hp1 -= 10;
                         hp2 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -270,7 +291,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('W') && attack.contains('K')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -278,7 +299,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('W') && attack.contains('L')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -288,7 +309,7 @@ public class FightController implements Initializable {
                     // Player 1 = Plant
                     if (attack.contains('S') && attack.contains('I')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -296,7 +317,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('S') && attack.contains('J')) {
                         hp1 -= 20;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -304,7 +325,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('S') && attack.contains('L')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -314,7 +335,7 @@ public class FightController implements Initializable {
                     // Player 1 = Earth
                     if (attack.contains('D') && attack.contains('I')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -322,7 +343,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('D') && attack.contains('J')) {
                         hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*3);
+                        hp2_bar.setMaxWidth(hp2*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -330,7 +351,7 @@ public class FightController implements Initializable {
                     }
                     if (attack.contains('D') && attack.contains('K')) {
                         hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*3);
+                        hp1_bar.setMaxWidth(hp1*hpDamage);
                         System.out.println("HP of Player 1 is: " + hp1);
                         System.out.println("HP of Player 2 is: " + hp2);
                         System.out.println("Before clear: " + attack);
@@ -340,8 +361,8 @@ public class FightController implements Initializable {
                     try {
                         if (hp1 == 0){
                             System.out.println("Player 2 wins");
-                            StateManager.setWinner(2);
-                            p2.setHighscore(p2.getHighscore() + 1);
+                            musicThread.interrupt();
+                            mediaPlayer.stop();
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
@@ -369,6 +390,8 @@ public class FightController implements Initializable {
                             System.out.println("Player 1 wins");
                             StateManager.setWinner(1);
                             p1.setHighscore(p1.getHighscore() + 1);
+                            musicThread.interrupt();
+                            mediaPlayer.stop();
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;

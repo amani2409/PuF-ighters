@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,21 +33,57 @@ public class ResultController implements Initializable {
     @FXML
     private AnchorPane resultAncorpane;
 
+    String fileName = "/Sounds/badass-victory-85546.mp3";
+
+    MediaPlayer mediaPlayer;
+
+
+
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(resultAncorpane, "Fxml/homepage.fxml");
     }
 
     @FXML
     void onSwitchToFight(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(resultAncorpane, "Fxml/fight.fxml");
     }
+
+
+    Thread musicThread = new Thread("Music Thread in Result") {
+        public void run() {
+            try {
+                Media media = new Media(getClass().getResource(fileName).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                mediaPlayer.setAutoPlay(true);
+                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                mediaPlayer.play();
+            } catch (Exception e) {
+                System.out.println("Won't play");
+                e.printStackTrace();
+            }
+            System.out.println("Result Thread: " + Thread.currentThread().getName());
+        }
+    };
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Figure loserFig = StateManager.getFightFigure(StateManager.getWinningOrder()[1]);
         Figure winnerFig = StateManager.getFightFigure(StateManager.getWinningOrder()[0]);
         Player loser = StateManager.getLoser();
         Player winner = StateManager.getWinner();
+        mediaPlayer.getVolume();
+        musicThread.start();
+        System.out.println("Result Thread: " + Thread.currentThread().getName());
+
+        Figure f1 = StateManager.getFightFigure(1);
+        Figure f2 = StateManager.getFightFigure(2);
+        Player p1 = StateManager.getPlayer(1);
+        Player p2 = StateManager.getPlayer(2);
 
         lo_name.setText(loser.getPlayername() + " has lost");
         los_highscore.setText(loser.getHighscore()+"");
