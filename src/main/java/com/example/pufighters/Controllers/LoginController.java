@@ -2,9 +2,11 @@ package com.example.pufighters.Controllers;
 
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.JdbcDB;
+//import com.example.pufighters.Model.Music;
 import com.example.pufighters.Model.Music;
 import com.example.pufighters.Model.Player;
 import com.example.pufighters.Model.SwitchScene;
+//import com.example.pufighters.MultiThread;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +17,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -40,6 +45,11 @@ public class LoginController implements Initializable {
 
     @FXML
     private TextField username2Text;
+
+    String fileName = "/Sounds/epic-orchestra-6960.mp3";
+
+    MediaPlayer mediaPlayer;
+
 
 
     public void loginButtonAction(ActionEvent event) throws SQLException, IOException, ClassNotFoundException {
@@ -65,6 +75,9 @@ public class LoginController implements Initializable {
             infoText("Login Successful! Let's go!", null, "Login " + username1Text);
             StateManager.setPlayer(1, player1);
             StateManager.setPlayer(2, player2);
+
+            musicThread.interrupt();
+            mediaPlayer.stop();
             new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
         }
 
@@ -86,51 +99,36 @@ public class LoginController implements Initializable {
         alert.show();
     }
 
+
+    Thread musicThread = new Thread("Music Thread in Login") {
+        public void run() {
+            try {
+                Media media = new Media(getClass().getResource(fileName).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                mediaPlayer.setAutoPlay(true);
+                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                mediaPlayer.setVolume(Music.getMusicVolume());
+                mediaPlayer.play();
+            } catch (Exception e) {
+                System.out.println("Won't play");
+                e.printStackTrace();
+            }
+            System.out.println("Login Thread: " + Thread.currentThread().getName());
+        }
+    };
+
+
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
-
         new SwitchScene(loginAchorpane, "Fxml/homepage.fxml");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        Thread music = new Thread();
-
-        music.start();
-        while (music.isAlive()) {
-            try {
-                Music.autoPlay("/Sounds/epic-orchestra-6960.mp3", "play");
-            } catch (Exception e) {
-                System.out.println("Won't play");
-                e.printStackTrace();
-            }
-
-        }
-
-        if (login_button.isPressed()){
-            music.interrupt();
-            Music.autoPlay("/Sounds/epic-orchestra-6960.mp3", "stop");
-        }
-
+        musicThread.start();
+        System.out.println("LoginThread: " + Thread.currentThread().getName());
     }
-
 }
-    /*
-
-        () -> {
-            try {
-                Music.autoPlay("/Sounds/epic-orchestra-6960.mp3");
-            } catch (Exception e) {
-                System.out.println("Won't play");
-                e.printStackTrace();
-            }
-        }).start();
-
-        Thread.st;
-        Music.stopMusic("/Sounds/epic-orchestra-6960.mp3");
-
-        stop*/
 
 
 

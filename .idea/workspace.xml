@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="blub">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/battle-march-action-loop-6935.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/epic-logo-6906.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/epic-orchestra-6960.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/soft-laughing-6445.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/start.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="background sound is playing, but it continues while changing the scene and music...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/MultiThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/badass-victory-85546.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/fightscene-76761.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/homepage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +157,7 @@
       <workItem from="1687083902455" duration="24581000" />
       <workItem from="1687163284308" duration="347000" />
       <workItem from="1687251271148" duration="2981000" />
-      <workItem from="1687679173714" duration="11192000" />
+      <workItem from="1687679173714" duration="17837000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -283,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687278279331</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="background sound is playing, but it continues while changing the scene and music...">
+      <created>1687691811295</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687691811295</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +322,8 @@
     <MESSAGE value="viel spaß!!" />
     <MESSAGE value="KeyInput in FightController &#10;Only WASD is working !!" />
     <MESSAGE value="blub" />
-    <option name="LAST_COMMIT_MESSAGE" value="blub" />
+    <MESSAGE value="background sound is playing, but it continues while changing the scene and music..." />
+    <option name="LAST_COMMIT_MESSAGE" value="background sound is playing, but it continues while changing the scene and music..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

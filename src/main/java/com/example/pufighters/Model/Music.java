@@ -1,5 +1,7 @@
 package com.example.pufighters.Model;
 
+import com.example.pufighters.Controllers.HomepageController;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -10,7 +12,20 @@ import java.net.URISyntaxException;
 
 public class Music {
 
-    static MediaPlayer mediaPlayer;
+    private static double musicVolume = 100;
+
+    public static void setMusicVolume(double musicVolume){
+        Music.musicVolume = musicVolume;
+    }
+
+    public static double getMusicVolume(){
+        return musicVolume;
+    }
+
+
+
+    /*
+
 
     public static void autoPlay(String fileName, String play) {
 
@@ -43,5 +58,5 @@ public class Music {
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.stop();
     }
-
+*/
 }

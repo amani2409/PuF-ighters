@@ -22,6 +22,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import static com.example.pufighters.Model.Animation.*;
@@ -65,6 +67,10 @@ public class FightController implements Initializable {
     @FXML
     private AnchorPane fightAnchorpane;
 
+    String fileName = "/Sounds/battle-march-action-loop-6935.mp3";
+
+    MediaPlayer mediaPlayer;
+
     private int hp1 = 100;
     private int hp2 = 100;
 
@@ -86,6 +92,8 @@ public class FightController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 System.out.println("angekommen im Fade aus der Seite Event");
                 try {
+                    musicThread.interrupt();
+                    mediaPlayer.stop();
                     new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -99,22 +107,36 @@ public class FightController implements Initializable {
 
     @FXML
     void onSwitchToHomepage(ActionEvent event) throws IOException {
+        musicThread.interrupt();
+        mediaPlayer.stop();
         new SwitchScene(fightAnchorpane, "Fxml/homepage.fxml");
     }
 
-    int i = 3;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        new Thread(() -> {
+    Thread musicThread = new Thread("Music Thread in Fight") {
+        public void run() {
             try {
-                Music.autoPlay("/Sounds/battle-march-action-loop-6935.mp3", "play");
+                Media media = new Media(getClass().getResource(fileName).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                mediaPlayer.setAutoPlay(true);
+                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                mediaPlayer.setVolume(Music.getMusicVolume());
+                mediaPlayer.play();
             } catch (Exception e) {
                 System.out.println("Won't play");
                 e.printStackTrace();
             }
-        }).start();
-        Music.autoPlay("/Sounds/battle-march-action-loop-6935.mp3", "stop");
+            System.out.println("Fight Thread: " + Thread.currentThread().getName());
+        }
+    };
+
+
+
+    int i = 3;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        musicThread.start();
+        System.out.println("Fight Thread: " + Thread.currentThread().getName());
 
 
 
@@ -338,6 +360,8 @@ public class FightController implements Initializable {
                     try {
                         if (hp1 == 0){
                             System.out.println("Player 2 wins");
+                            musicThread.interrupt();
+                            mediaPlayer.stop();
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
@@ -361,6 +385,8 @@ public class FightController implements Initializable {
                             System.out.println("highscore: " + p2.getHighscore());
                         }else if(hp2 == 0){
                             System.out.println("Player 1 wins");
+                            musicThread.interrupt();
+                            mediaPlayer.stop();
                             new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
                             hp1 = 100;
                             hp2 = 100;
