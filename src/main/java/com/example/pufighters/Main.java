@@ -1,6 +1,6 @@
 package com.example.pufighters;
 
-import com.example.pufighters.Helper.DbHandler;
+//import com.example.pufighters.Helper.DbHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class Main extends Application {
-    static private DbHandler dbHandler;
+//    static private DbHandler dbHandler;
     static private Connection connection;
     static private PreparedStatement preparedStatement;
 

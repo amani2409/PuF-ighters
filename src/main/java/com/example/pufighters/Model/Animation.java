@@ -95,7 +95,6 @@ public class Animation {
         return fade;
     }
 
-
     public static ScaleTransition scale(ImageView figure, double with, double height, Button x, Boolean sprung, int cycount) {
         ScaleTransition scale = new ScaleTransition();
         scale.setNode(figure);
@@ -121,8 +120,6 @@ public class Animation {
 
     public static PathTransition arc(ImageView figure, Button x, double l_r) {
         Path arc = new Path();
-//        v3 = -500 geht 500 nach oben / +500 geht 500 nach unten
-//        v2 = -500 geht 500 nach links / +500 geht 500 nach rechts
         arc.getElements().add(new MoveTo(10, 20));
         arc.getElements().add(new QuadCurveTo(440, 40, l_r, -340));
 

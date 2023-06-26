@@ -60,7 +60,7 @@
                </padding>
             </Label>
 
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="80.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="136.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" />
 
             <padding>
                <Insets left="10.0" top="10.0" />
@@ -94,7 +94,7 @@
             </Label>
             <AnchorPane>
 
-               <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="80.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" textAlignment="CENTER" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="0.0" />
+               <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="130.0" mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="35.0" prefWidth="140.0" styleClass="button-style" stylesheets="@../../../../Styles/fight.css" text="Aufgeben" textAlignment="CENTER" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="0.0" />
 
             </AnchorPane>
             <padding>

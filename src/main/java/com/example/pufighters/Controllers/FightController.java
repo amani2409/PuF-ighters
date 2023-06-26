@@ -131,20 +131,15 @@ public class FightController implements Initializable {
         }
     };
 
-
-
     int i = 3;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         musicThread.start();
         System.out.println("Fight Thread: " + Thread.currentThread().getName());
 
-//        fadeFromePage();
 
-
-//        timer_fight.setText(String.valueOf(i));
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
-//            timer_fight.setText(String.valueOf(i));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(800), e -> {
+            timer_fight.setStyle("-fx-font-size: 30");
             if (i == 3) {
                 timer_fight.setText("Ready");
             }

@@ -9,13 +9,11 @@ import com.example.pufighters.Model.SwitchScene;
 import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -24,9 +22,7 @@ import javafx.scene.media.MediaPlayer;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
 
@@ -34,6 +30,7 @@ public class SettingsController implements Initializable {
     public Button reset_his_pl1;
     public Button reset_his_pl2;
     public ListView listview_history;
+    public ListView listview_history2;
     @FXML
     private Slider musicSlider;
     @FXML
@@ -115,14 +112,13 @@ public class SettingsController implements Initializable {
             HttpRequestHelper.updateHighscore(name2, 0);
             HttpRequestHelper.deletePlayerHistory(name2);
             p2.setHighscore(0);
+            setList(listview_history2, name2);
+
         });
 
         List<Playerhistory> h2 = HttpRequestHelper.getPlayerHistory(name2);
-
         setList(listview_history, name1);
-//        for (Playerhistory ph : h2) {
-//            listview_history.getItems().add(ph.getPlayername()+", "+ph.getHighscore());
-//        }
+        setList(listview_history2, name2);
     }
 
     public static void setList(ListView l, String name) {

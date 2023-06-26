@@ -54,6 +54,6 @@ public class Playerhistory {
 
     @Override
     public String toString() {
-        return playername+"|"+highscore+"|"+result+"|"+new Date(date);
+        return playername +" | "+highscore+" | "+result+" | "+new Date(date);
     }
 }

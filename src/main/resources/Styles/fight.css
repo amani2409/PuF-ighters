@@ -3,6 +3,12 @@
 .text-fight {
     -fx-font-family:'Gloria Hallelujah', cursive;
 }
+.text-result {
+    -fx-font-family:'Gloria Hallelujah', cursive;
+    -fx-font-size: 3em;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}
 
 .label-mana {
     -fx-background-color: #ffca4e;

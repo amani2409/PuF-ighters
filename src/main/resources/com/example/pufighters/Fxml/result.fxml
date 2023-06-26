@@ -18,7 +18,7 @@
          <Image url="@../../../../Images/gui-hinterguende/welle2.png" />
       </image>
    </ImageView>
-   <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+   <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
       <VBox prefHeight="650.0" prefWidth="414.0">
          <ImageView fx:id="crown" fitHeight="218.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
             <VBox.margin>
@@ -33,7 +33,7 @@
                <Insets left="100.0" />
             </VBox.margin>
          </ImageView>
-         <Label fx:id="win_name" alignment="CENTER" prefHeight="89.0" prefWidth="429.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+         <Label fx:id="win_name" alignment="CENTER" prefHeight="89.0" prefWidth="429.0" styleClass="text-result" stylesheets="@../../../../Styles/fight.css" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
             <font>
                <Font name="System Bold Italic" size="48.0" />
             </font>
@@ -45,7 +45,7 @@
                </DropShadow>
             </effect>
          </Label>
-         <Label fx:id="win_higscore" alignment="CENTER" layoutX="10.0" layoutY="426.0" prefHeight="89.0" prefWidth="429.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" text="Highscore" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+         <Label fx:id="win_higscore" alignment="CENTER" layoutX="10.0" layoutY="426.0" prefHeight="89.0" prefWidth="429.0" styleClass="text-result" stylesheets="@../../../../Styles/fight.css" text="Highscore" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
             <font>
                <Font name="System Bold Italic" size="48.0" />
             </font>
@@ -60,8 +60,11 @@
       </VBox>
       <VBox layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="314.0">
          <children>
-            <ImageView fx:id="lost_figter" fitHeight="123.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="lo_name" alignment="CENTER" prefHeight="33.0" prefWidth="314.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+            <ImageView fx:id="lost_figter" fitHeight="181.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="70.0" top="230.0" />
+               </VBox.margin></ImageView>
+            <Label fx:id="lo_name" alignment="CENTER" prefHeight="33.0" prefWidth="314.0" styleClass="text-result" stylesheets="@../../../../Styles/fight.css" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="48.0" />
                </font>
@@ -73,10 +76,10 @@
                   </DropShadow>
                </effect>
                <VBox.margin>
-                  <Insets top="350.0" />
+                  <Insets top="35.0" />
                </VBox.margin>
             </Label>
-            <Label fx:id="los_highscore" alignment="CENTER" prefHeight="89.0" prefWidth="429.0" styleClass="text-fight" stylesheets="@../../../../Styles/fight.css" text="Highscore" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
+            <Label fx:id="los_highscore" alignment="CENTER" prefHeight="89.0" prefWidth="429.0" styleClass="text-result" stylesheets="@../../../../Styles/fight.css" text="Highscore" textAlignment="CENTER" textFill="#ede4e4" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="48.0" />
                </font>

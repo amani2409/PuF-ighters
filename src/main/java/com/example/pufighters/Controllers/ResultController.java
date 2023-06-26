@@ -81,9 +81,9 @@ public class ResultController implements Initializable {
         System.out.println("Result Thread: " + Thread.currentThread().getName() + " " + lo_name + " "+ loser.getPlayername());
 
         lo_name.setText(loser.getPlayername() + " has lost");
-        los_highscore.setText(loser.getHighscore()+"");
+        los_highscore.setText("Highscore: "+ loser.getHighscore());
         win_name.setText(winner.getPlayername() + " has won");
-        win_higscore.setText(winner.getHighscore()+"");
+        win_higscore.setText("Highscore: " + winner.getHighscore());
 
 
         try {
