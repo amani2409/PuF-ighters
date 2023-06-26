@@ -39,7 +39,7 @@
                 <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="96.80000610351561" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <Button fx:id="reset_his_pl1" mnemonicParsing="false" prefHeight="46.0" prefWidth="197.0" text="reset highscore pl 1" GridPane.rowIndex="1">
+            <Button fx:id="reset_his_pl1" mnemonicParsing="false" prefHeight="46.0" prefWidth="197.0" styleClass="button-setting" text="reset highscore pl 1" GridPane.rowIndex="1">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
@@ -53,12 +53,12 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <Slider fx:id="musicSlider" GridPane.rowIndex="1" />
-                <ToggleButton fx:id="muteButton" mnemonicParsing="false" onAction="#muteToggle" prefHeight="44.0" prefWidth="236.0" text="Music">
+                <ToggleButton fx:id="muteButton" mnemonicParsing="false" onAction="#muteToggle" prefHeight="44.0" prefWidth="236.0" styleClass="button-setting" text="Music">
                     <graphic>
-                        <ImageView fitHeight="56.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
-
-                            <Image url="@../../../../Images/music.png" />
-
+                        <ImageView fx:id="music_icon" fitHeight="56.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+      
+                            <Image url="@../../../../Images/music_on.png" />
+      
                         </ImageView>
                     </graphic>
                 </ToggleButton>
@@ -74,7 +74,7 @@
                     <ColumnConstraints />
                 </columnConstraints>
                 <Slider GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <ToggleButton fx:id="muteButton1" mnemonicParsing="false" onAction="#muteToggle" prefHeight="44.0" prefWidth="236.0" text="Soundeffect" GridPane.columnIndex="2">
+                <ToggleButton fx:id="muteButton1" mnemonicParsing="false" onAction="#muteToggle" prefHeight="44.0" prefWidth="236.0" styleClass="button-setting" text="Soundeffect" GridPane.columnIndex="2">
                     <graphic>
                         <ImageView fx:id="soundIcon" fitHeight="18.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
 
@@ -84,14 +84,14 @@
                     </graphic>
                 </ToggleButton>
             </GridPane>
-           <Button fx:id="reset_his_pl2" layoutX="10.0" layoutY="176.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="197.0" text="reset highscore pl 2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+           <Button fx:id="reset_his_pl2" layoutX="10.0" layoutY="176.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="197.0" styleClass="button-setting" text="reset highscore pl 2" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
            </Button>
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="248.0" text="Sources" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="248.0" styleClass="button-setting" text="Sources" GridPane.rowIndex="2" />
    
-            <Button mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="44.0" prefWidth="263.0" text="return" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#onSwitchToHomepage" prefHeight="44.0" prefWidth="263.0" styleClass="button-setting" text="return" GridPane.columnIndex="3" GridPane.rowIndex="2" />
            <padding>
                <Insets top="80.0" />
            </padding>

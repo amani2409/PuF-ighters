@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="merge und anpassungen. zu müde, würde morgen nochmal weiter machen und nochmal pushen">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/music_off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/music_on.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/DbHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/JdbcDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Playerhistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Playerhistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/fight.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/fight.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/result.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/MultiThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/start.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "W:/Uni/5. Semester/Patterns and Frameworks/PuF-ighters_dummy/src/main/resources/Sounds",
+    "last_opened_file_path": "W:/Uni/5. Semester/Patterns and Frameworks/Abgabe/PuF-ighters/src/main/resources/Images",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,6 +81,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="W:\Uni\5. Semester\Patterns and Frameworks\Abgabe\PuF-ighters\src\main\resources\Images" />
       <recent name="W:\Uni\5. Semester\Patterns and Frameworks\PuF-ighters_dummy\src\main\resources\Sounds" />
       <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources\Images" />
       <recent name="C:\Users\illi-\OneDrive\Desktop\BerlinerHochschuleFTechnik\6_Semester\PuF\alpha-fighters\PuF-ighters\src\main\resources\Images\playfiguren-homescreen" />
@@ -164,6 +157,7 @@
       <workItem from="1687251271148" duration="2981000" />
       <workItem from="1687679173714" duration="20237000" />
       <workItem from="1687772909498" duration="8282000" />
+      <workItem from="1687813658445" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>

@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -32,9 +33,14 @@ public class SettingsController implements Initializable {
     public ListView listview_history;
     public ListView listview_history2;
     @FXML
+    private ImageView music_icon;
+
+    @FXML
     private Slider musicSlider;
     @FXML
     private ToggleButton muteButton;
+    @FXML
+    private ToggleButton muteButton1;
 
     @FXML
     private AnchorPane settingsAchorpane;
@@ -45,7 +51,12 @@ public class SettingsController implements Initializable {
     String fileName = "/Sounds/epic-logo-6906.mp3";
 
     MediaPlayer mediaPlayer;
-    int musicVolume;
+
+    String fileMusicOn = "/Images/music_on.png";
+    Image musicOn = new Image(getClass().getResourceAsStream(fileMusicOn));
+
+    String fileMusicOff = "/Images/music_off.png";
+    Image musicOff = new Image(getClass().getResourceAsStream(fileMusicOff));
 
 
     @FXML
@@ -53,12 +64,12 @@ public class SettingsController implements Initializable {
         if(muteButton.isSelected()){
             mediaPlayer.setVolume(0);
             Music.setMusicVolume(0);
-
+            music_icon.setImage(musicOff);
         } else{
             mediaPlayer.setVolume(100);
             Music.setMusicVolume(100);
+            music_icon.setImage(musicOn);
         }
-
     }
 
     @FXML
@@ -96,6 +107,9 @@ public class SettingsController implements Initializable {
             mediaPlayer.setVolume(musicSlider.getValue()/100);
             Music.setMusicVolume(musicSlider.getValue()/100);
         });
+        if (musicSlider.getValue() > 0) {
+            music_icon.setImage(musicOn);
+        }
 
         Player p1 = StateManager.getPlayer(1);
         Player p2 = StateManager.getPlayer(2);
