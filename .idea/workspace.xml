@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="Nur Settings etwas angepasst von den buttons und von den Music on und off button">
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="disable keyinput, wenn in Timeline ready set fight steht danach keyinput enable">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-3_setting.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/HomepageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/ResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/HttpRequestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/HttpRequestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/ParameterStringBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/ParameterStringBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Helper/StateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Figure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Music.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Playerhistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/Playerhistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/SwitchScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Model/SwitchScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/gui-hinterguende/homepage-3 - setting.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/fight.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pufighters/Fxml/settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +168,8 @@
       <workItem from="1687679173714" duration="20237000" />
       <workItem from="1687772909498" duration="8282000" />
       <workItem from="1687813658445" duration="1911000" />
-      <workItem from="1687857248821" duration="1621000" />
+      <workItem from="1687857248821" duration="2168000" />
+      <workItem from="1687881742271" duration="10143000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -300,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687815501174</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="disable keyinput, wenn in Timeline ready set fight steht danach keyinput enable">
+      <created>1687859007358</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1687859007358</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +366,8 @@
     <MESSAGE value="background is working and changing the volume" />
     <MESSAGE value="merge und anpassungen. zu müde, würde morgen nochmal weiter machen und nochmal pushen" />
     <MESSAGE value="Nur Settings etwas angepasst von den buttons und von den Music on und off button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nur Settings etwas angepasst von den buttons und von den Music on und off button" />
+    <MESSAGE value="disable keyinput, wenn in Timeline ready set fight steht danach keyinput enable" />
+    <option name="LAST_COMMIT_MESSAGE" value="disable keyinput, wenn in Timeline ready set fight steht danach keyinput enable" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -15,7 +15,7 @@
 
 <AnchorPane fx:id="settingsAchorpane" prefHeight="700.0" prefWidth="1000.0" styleClass="button-setlog" stylesheets="@../../../../Styles/homepage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pufighters.Controllers.SettingsController">
     <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../../../../Images/gui-hinterguende/homepage-3%20-%20setting.jpg" />
+        <Image url="@../../../../Images/gui-hinterguende/homepage-3_setting.jpg" />
     </ImageView>
     <GridPane prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>

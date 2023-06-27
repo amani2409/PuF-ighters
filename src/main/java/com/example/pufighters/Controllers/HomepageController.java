@@ -3,71 +3,60 @@ package com.example.pufighters.Controllers;
 import com.example.pufighters.Helper.HttpRequestHelper;
 import com.example.pufighters.Helper.StateManager;
 import com.example.pufighters.Model.*;
-import com.google.gson.Gson;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Popup;
-import javafx.util.Duration;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
-import java.nio.file.Paths;
-import java.sql.Blob;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class HomepageController implements Initializable {
-
-
+    @FXML
+    private AnchorPane homepageAchorpane;
     @FXML
     private Button p1_f1;
     @FXML
-    private Button p2_f1;
-    @FXML
-    private Button p1_f4;
-    @FXML
-    private Button p2_f4;
-    @FXML
-    private Button p1_f7;
-    @FXML
-    private Button p2_f7;
-    @FXML
     private Button p1_f2;
-    @FXML
-    private Button p2_f2;
-    @FXML
-    private Button p1_f8;
-    @FXML
-    private Button p2_f8;
     @FXML
     private Button p1_f3;
     @FXML
-    private Button p2_f3;
+    private Button p1_f4;
+    @FXML
+    private Button p1_f5;
     @FXML
     private Button p1_f6;
     @FXML
-    private Button p2_f6;
+    private Button p1_f7;
+    @FXML
+    private Button p1_f8;
     @FXML
     private Button p1_f9;
     @FXML
-    private Button p2_f9;
+    private Button p2_f1;
+    @FXML
+    private Button p2_f2;
+    @FXML
+    private Button p2_f3;
+    @FXML
+    private Button p2_f4;
     @FXML
     private Button p2_f5;
     @FXML
-    private Button p1_f5;
+    private Button p2_f6;
+    @FXML
+    private Button p2_f7;
+    @FXML
+    private Button p2_f8;
+    @FXML
+    private Button p2_f9;
     @FXML
     private ImageView pink_music;
     @FXML
@@ -93,21 +82,18 @@ public class HomepageController implements Initializable {
     @FXML
     private Label player_name1;
     @FXML
-    private Label highscore_player2;
-    @FXML
     private Label player_name2;
     @FXML
     private Label highscore_player1;
     @FXML
-    private Button button_logout;
-
-    @FXML
-    private AnchorPane homepageAchorpane;
+    private Label highscore_player2;
 
     String fileName = "/Sounds/epic-logo-6906.mp3";
-
     MediaPlayer mediaPlayer;
 
+    /**
+     * Wird in der homepage.xml aufgerufen, beim Betätigen des Logout-Buttons wird zur Login-Page weitergeleitet
+     */
     @FXML
     void onSwitchToLogin(ActionEvent event) throws IOException {
         musicThread.interrupt();
@@ -115,6 +101,9 @@ public class HomepageController implements Initializable {
         new SwitchScene(homepageAchorpane, "Fxml/login.fxml");
     }
 
+    /**
+     * Wird in der homepage.xml aufgerufen, beim Betätigen des Start Game Buttons wird zur Fighting-Page weitergeleitet
+     */
     @FXML
     void onSwitchToFight(ActionEvent event) throws IOException {
         musicThread.interrupt();
@@ -122,7 +111,9 @@ public class HomepageController implements Initializable {
         new SwitchScene(homepageAchorpane, "Fxml/fight.fxml");
     }
 
-    //
+    /**
+     * Wird in der homepage.xml aufgerufen, beim Betätigen des Settings-Buttons wird zur Setting-Page weitergeleitet
+     */
     @FXML
     void onSwitchToSettings(ActionEvent event) throws IOException {
         musicThread.interrupt();
@@ -130,12 +121,15 @@ public class HomepageController implements Initializable {
         new SwitchScene(homepageAchorpane, "Fxml/settings.fxml");
     }
 
+    /**
+     * Methode zum Setzen der Figurenauswahl für die Spieler.
+     * Die Methode reagiert auf Klicks der Buttons pl_fig1 und pl_fig2 und setzt entsprechend die ausgewählte Figur für den jeweiligen Spieler.
+     * Die Methode verwendet die übergebenen Parameter pl_fig1, pl_fig2, img_player1, img_player2 und fig_name.
+     */
     public void figChoice(Button pl_fig1, Button pl_fig2, ImageView img_player1, ImageView img_player2, String fig_name) {
-
         pl_fig1.setOnAction(actionEvent -> {
             try {
                 Figure f1 = HttpRequestHelper.getFigure(fig_name);
-                System.out.println(f1.getFigurename());
                 img_player1.setImage(f1.getImg());
                 StateManager.setFightFigure(1, f1);
             } catch (Exception e) {
@@ -145,18 +139,19 @@ public class HomepageController implements Initializable {
 
         pl_fig2.setOnAction(actionEvent -> {
             try {
-//                    Figure f2 = g.fromJson(JdbcDB.getDatabyColumn("figures", "figurename", fig_name2), Figure[].class)[0];
                 Figure f2 = HttpRequestHelper.getFigure(fig_name);
-                System.out.println(f2.getFigurename());
                 img_player2.setImage(f2.getImg());
                 StateManager.setFightFigure(2, f2);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
-
     }
 
+    /**
+     * Erzeugt einen neuen Thread für die Musikwiedergabe während der Homepage.
+     * Der Thread spielt die Musikdatei ab und setzt verschiedene Eigenschaften des MediaPlayers.
+     */
     Thread musicThread = new Thread("Music Thread in Homepage") {
         public void run() {
             try {
@@ -167,17 +162,20 @@ public class HomepageController implements Initializable {
                 mediaPlayer.setVolume(Music.getMusicVolume());
                 mediaPlayer.play();
             } catch (Exception e) {
-                System.out.println("Won't play");
                 e.printStackTrace();
             }
-            System.out.println("Homepage Thread: " + Thread.currentThread().getName());
         }
     };
 
+    /**
+     * Initialisiert die Szene, wenn sie geladen wird.
+     *
+     * @param url            Die URL der FXML-Datei.
+     * @param resourceBundle Das ResourceBundle, das der Szene zugeordnet ist.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         musicThread.start();
-        System.out.println("Homepage Thread: " + Thread.currentThread().getName());
 
         Animation.raincomet(12, homepageAchorpane);
 
@@ -192,6 +190,7 @@ public class HomepageController implements Initializable {
         Figure f1 = StateManager.getFightFigure(1);
         Figure f2 = StateManager.getFightFigure(2);
 
+        // Figuren werden aus der Datenbank geladen und den ImageViews im Client ausgetauscht
         try {
             pink_music.setImage(HttpRequestHelper.getFigure("playfig-1.png").getImg());
             apple.setImage(HttpRequestHelper.getFigure("playfig-2.png").getImg());
@@ -205,6 +204,7 @@ public class HomepageController implements Initializable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        // Images werden den Player zugeordnet
         try {
             if (f1 != null) {
                 img_player1.setImage(f1.getImg());
@@ -215,6 +215,7 @@ public class HomepageController implements Initializable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        // Buttons anklicken, um den Playern die jeweilige Fightfigur zuzuordnen
         figChoice(p1_f1, p2_f1, img_player1, img_player2, "playfig-1.png");
         figChoice(p1_f2, p2_f2, img_player1, img_player2, "playfig-2.png");
         figChoice(p1_f3, p2_f3, img_player1, img_player2, "playfig-3.png");
@@ -224,7 +225,5 @@ public class HomepageController implements Initializable {
         figChoice(p1_f7, p2_f7, img_player1, img_player2, "playfig-7.png");
         figChoice(p1_f8, p2_f8, img_player1, img_player2, "playfig-8.png");
         figChoice(p1_f9, p2_f9, img_player1, img_player2, "playfig-9.png");
-
     }
-
 }

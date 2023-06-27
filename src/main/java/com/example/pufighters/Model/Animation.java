@@ -73,28 +73,6 @@ public class Animation {
         return fade;
     }
 
-    public static FadeTransition fade_rain(ImageView figure, Button x) {
-        FadeTransition fade = new FadeTransition();
-        fade.setNode(figure);
-        fade.setDuration(Duration.millis(400));
-        fade.setCycleCount(3);
-        fade.setFromValue(0);
-        fade.setToValue(1);
-        fade.play();
-        fade.setOnFinished(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                fade(figure, .3, 1);
-                x.setStyle("-fx-background-color: #000000");
-                x.setStyle("-fx-text-fill: #ffffff");
-                x.setStyle("-fx-opacity: 70%");
-                x.setStyle("-fx-border-color: #e5dada");
-                x.setStyle("-fx-border-radius: 15%");
-            }
-        });
-        return fade;
-    }
-
     public static ScaleTransition scale(ImageView figure, double with, double height, Button x, Boolean sprung, int cycount) {
         ScaleTransition scale = new ScaleTransition();
         scale.setNode(figure);
@@ -144,7 +122,7 @@ public class Animation {
         paraTrans.getChildren().addAll(t_one, t_two);
     }
 
-    //    ------------------------- !!! BASIS - Angirffe!!! -------------------------------     //
+    //    ------------------------- !!! BASIS - Angriffe!!! -------------------------------     //
 
     //    Figure 1 feuer
     public static void feuer_w(ImageView fightFigure1, Button w) {
@@ -199,7 +177,6 @@ public class Animation {
     public static void raincomet(int cometenZahel, AnchorPane aPane) {
         for (int i = 0; i < cometenZahel; i++) {
             ImageView v = new ImageView();
-//            fitHeight="163.0" fitWidth="200.0" layoutX="461.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" rotate="-85.2"
             double sc = Math.random() * 0.1 + 1;
             v.setFitHeight(163.0 * sc);
             v.setFitWidth(200.0 * sc);
@@ -232,6 +209,4 @@ public class Animation {
         translate.play();
         return translate;
     }
-
-
 }
