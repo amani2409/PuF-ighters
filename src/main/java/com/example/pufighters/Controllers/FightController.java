@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -36,21 +37,21 @@ public class FightController implements Initializable {
     @FXML
     private Label hp2_bar;
     @FXML
-    private  Button a_button;
+    private Button a_button;
     @FXML
-    private  Button s_button;
+    private Button s_button;
     @FXML
-    private  Button d_button;
+    private Button d_button;
     @FXML
-    private  Button w_button;
+    private Button w_button;
     @FXML
-    private  Button i_button;
+    private Button i_button;
     @FXML
-    private  Button j_button;
+    private Button j_button;
     @FXML
-    private  Button k_button;
+    private Button k_button;
     @FXML
-    private  Button l_button;
+    private Button l_button;
     @FXML
     private ImageView boom_effect;
     @FXML
@@ -75,7 +76,7 @@ public class FightController implements Initializable {
     private int hp1 = 100;
     private int hp2 = 100;
 
-
+    private boolean enableKeyInput = true;
 
 
     int timeLeft = 0;
@@ -131,35 +132,53 @@ public class FightController implements Initializable {
         }
     };
 
+
+    private void keyPressed(KeyEvent keyEvent) {
+        if (!enableKeyInput) {
+            keyEvent.consume();
+        }
+    }
+
+    private void setEnableKeyInput() {
+        enableKeyInput = true;
+    }
+
+    private void setDisableKeyInput() {
+        enableKeyInput = false;
+    }
+
     int i = 3;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         musicThread.start();
         System.out.println("Fight Thread: " + Thread.currentThread().getName());
 
-
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(800), e -> {
             timer_fight.setStyle("-fx-font-size: 30");
             if (i == 3) {
                 timer_fight.setText("Ready");
+                setDisableKeyInput();
             }
             if (i == 2) {
                 timer_fight.setText("Set");
+                setDisableKeyInput();
             }
             if (i == 1) {
                 timer_fight.setText("FIGHT!");
+                setDisableKeyInput();
             }
             if (i == 0) {
                 timer_fight.setText("");
-
+                setEnableKeyInput();
             } else {
             }
             i--;
         }));
 
+
         timeline.setCycleCount(javafx.animation.Animation.INDEFINITE);
         timeline.play();
-
 
         Player p1 = StateManager.getPlayer(1);
         Player p2 = StateManager.getPlayer(2);
@@ -179,7 +198,6 @@ public class FightController implements Initializable {
         }
 
 
-
         ArrayList<Character> attack = new ArrayList<>();
         fightAnchorpane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -194,224 +212,228 @@ public class FightController implements Initializable {
 //                 plantp2 = .(KeyCode.K);
 //                 soilp2 = .(KeyCode.L);
 
-                switch (keyEvent.getCode()) {
-                    case A:
-                        attack.add('A');
-                        Animation.water_a(fighter1, a_button);
-                        break;
-                    case S:
-                        attack.add('S');
-                        Animation.plant_s(fighter1, s_button);
-                        break;
-                    case W:
-                        attack.add('W');
-                        Animation.feuer_w(fighter1, w_button);
-                        break;
-                    case D:
-                        attack.add('D');
-                        Animation.solip_d(fighter1, d_button);
-                        break;
-                    case I:
-                        attack.add('I');
-                        Animation.feuer_i(fighter2, i_button);
-                        break;
-                    case J:
-                        attack.add('J');
-                        Animation.water_j(fighter2, j_button);
-                        break;
-                    case K:
-                        attack.add('K');
-                        Animation.plant_k(fighter2, k_button);
-                        break;
-                    case L:
-                        attack.add('L');
-                        Animation.solip_l(fighter2, l_button);
-                        break;
-                    default:
-                        break;
-                }
-
-                int hpDamage = 3;
-
-                if (hp1 != 0 && hp2 != 0) {
-                    if (attack.contains('A') && attack.contains('I')) {
-                        hp2 -= 20;
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                        System.out.println(attack);
-                    }
-
-                    if (attack.contains('A') && attack.contains('K')) {
-                        hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                        System.out.println(attack);
-
-
-                    }
-                    if (attack.contains('A') && attack.contains('L')) {
-                        hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                        System.out.println(attack);
-                    }
-
-                    // Player 1 = Fire
-                    if (attack.contains('W') && attack.contains('J')) {
-                        hp1 -= 20;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('W') && attack.contains('I')) {
-                        hp1 -= 10;
-                        hp2 -= 10;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('W') && attack.contains('K')) {
-                        hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('W') && attack.contains('L')) {
-                        hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-
-                    // Player 1 = Plant
-                    if (attack.contains('S') && attack.contains('I')) {
-                        hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('S') && attack.contains('J')) {
-                        hp1 -= 20;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('S') && attack.contains('L')) {
-                        hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-
-                    // Player 1 = Earth
-                    if (attack.contains('D') && attack.contains('I')) {
-                        hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('D') && attack.contains('J')) {
-                        hp2 -= 10;
-                        hp2_bar.setMaxWidth(hp2*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
-                    if (attack.contains('D') && attack.contains('K')) {
-                        hp1 -= 10;
-                        hp1_bar.setMaxWidth(hp1*hpDamage);
-                        System.out.println("HP of Player 1 is: " + hp1);
-                        System.out.println("HP of Player 2 is: " + hp2);
-                        System.out.println("Before clear: " + attack);
-                        attack.clear();
-                    }
+                if (!enableKeyInput) {
+                    keyEvent.consume();
                 } else {
-                    try {
-                        if (hp1 == 0){
-                            System.out.println("Player 2 wins");
-                            musicThread.interrupt();
-                            mediaPlayer.stop();
-                            StateManager.setWinner(2);
-                            p2.setHighscore(p2.getHighscore() + 1);
-                            new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
-                            hp1 = 100;
-                            hp2 = 100;
-                            Player p1 = StateManager.getPlayer(1);
-                            Player p2 = StateManager.getPlayer(2);
+                    switch (keyEvent.getCode()) {
+                        case A:
+                            attack.add('A');
+                            Animation.water_a(fighter1, a_button);
+                            break;
+                        case S:
+                            attack.add('S');
+                            Animation.plant_s(fighter1, s_button);
+                            break;
+                        case W:
+                            attack.add('W');
+                            Animation.feuer_w(fighter1, w_button);
+                            break;
+                        case D:
+                            attack.add('D');
+                            Animation.solip_d(fighter1, d_button);
+                            break;
+                        case I:
+                            attack.add('I');
+                            Animation.feuer_i(fighter2, i_button);
+                            break;
+                        case J:
+                            attack.add('J');
+                            Animation.water_j(fighter2, j_button);
+                            break;
+                        case K:
+                            attack.add('K');
+                            Animation.plant_k(fighter2, k_button);
+                            break;
+                        case L:
+                            attack.add('L');
+                            Animation.solip_l(fighter2, l_button);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    int hpDamage = 3;
+
+                    if (hp1 != 0 && hp2 != 0) {
+                        if (attack.contains('A') && attack.contains('I')) {
+                            hp2 -= 20;
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                            System.out.println(attack);
+                        }
+
+                        if (attack.contains('A') && attack.contains('K')) {
+                            hp1 -= 10;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                            System.out.println(attack);
+
+
+                        }
+                        if (attack.contains('A') && attack.contains('L')) {
+                            hp2 -= 10;
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                            System.out.println(attack);
+                        }
+
+                        // Player 1 = Fire
+                        if (attack.contains('W') && attack.contains('J')) {
+                            hp1 -= 20;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('W') && attack.contains('I')) {
+                            hp1 -= 10;
+                            hp2 -= 10;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('W') && attack.contains('K')) {
+                            hp2 -= 10;
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('W') && attack.contains('L')) {
+                            hp1 -= 10;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+
+                        // Player 1 = Plant
+                        if (attack.contains('S') && attack.contains('I')) {
+                            hp2 -= 10;
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('S') && attack.contains('J')) {
+                            hp1 -= 20;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('S') && attack.contains('L')) {
+                            hp2 -= 10;
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+
+                        // Player 1 = Earth
+                        if (attack.contains('D') && attack.contains('I')) {
+                            hp1 -= 10;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('D') && attack.contains('J')) {
+                            hp2 -= 10;
+                            hp2_bar.setMaxWidth(hp2 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                        if (attack.contains('D') && attack.contains('K')) {
+                            hp1 -= 10;
+                            hp1_bar.setMaxWidth(hp1 * hpDamage);
+                            System.out.println("HP of Player 1 is: " + hp1);
+                            System.out.println("HP of Player 2 is: " + hp2);
+                            System.out.println("Before clear: " + attack);
+                            attack.clear();
+                        }
+                    } else {
+                        try {
+                            if (hp1 == 0) {
+                                System.out.println("Player 2 wins");
+                                musicThread.interrupt();
+                                mediaPlayer.stop();
+                                StateManager.setWinner(2);
+                                p2.setHighscore(p2.getHighscore() + 1);
+                                new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
+                                hp1 = 100;
+                                hp2 = 100;
+                                Player p1 = StateManager.getPlayer(1);
+                                Player p2 = StateManager.getPlayer(2);
 
 //                            playername1.setText(p1.getPlayername());
-                            playername1.setText(p1.getPlayername());
-                            int p1_highscore = p1.getHighscore();
+                                playername1.setText(p1.getPlayername());
+                                int p1_highscore = p1.getHighscore();
 //                            System.out.println("highscore: " + p1_highscore);
-                            playername2.setText(p2.getPlayername());
-                            HttpRequestHelper.updateHighscore(p2.getPlayername(), p2.getHighscore());
-                            Long t = System.currentTimeMillis();
-                            HttpRequestHelper.updateHistory(new Playerhistory(p2.getPlayername(), p2.getHighscore(), t, "winner"));
-                            HttpRequestHelper.updateHistory(new Playerhistory(p1.getPlayername(), p1.getHighscore(), t, "loser"));
+                                playername2.setText(p2.getPlayername());
+                                HttpRequestHelper.updateHighscore(p2.getPlayername(), p2.getHighscore());
+                                Long t = System.currentTimeMillis();
+                                HttpRequestHelper.updateHistory(new Playerhistory(p2.getPlayername(), p2.getHighscore(), t, "winner"));
+                                HttpRequestHelper.updateHistory(new Playerhistory(p1.getPlayername(), p1.getHighscore(), t, "loser"));
 
 //                            System.out.println("highscore: " + p2_highscore);
 //                            highscore_player1.setText(String.valueOf(p1.getHighscore()));
 //                            highscore_player2.setText(String.valueOf(p2.getHighscore()));
 //                            JdbcDB.updateDB(playername1.toString(), p1_highscore);
 //                            JdbcDB.updateDB(playername2.toString(), p2.getHighscore());
-                            System.out.println("highscore: " + p1.getHighscore());
-                            System.out.println("highscore: " + p2.getHighscore());
-                        }else if(hp2 == 0){
-                            System.out.println("Player 1 wins");
-                            StateManager.setWinner(1);
-                            p1.setHighscore(p1.getHighscore() + 1);
-                            musicThread.interrupt();
-                            mediaPlayer.stop();
-                            new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
-                            hp1 = 100;
-                            hp2 = 100;
-                            HttpRequestHelper.updateHighscore(p1.getPlayername(), p1.getHighscore());
-                            Long t = System.currentTimeMillis();
-                            HttpRequestHelper.updateHistory(new Playerhistory(p1.getPlayername(), p1.getHighscore(), t, "winner"));
-                            HttpRequestHelper.updateHistory(new Playerhistory(p2.getPlayername(), p2.getHighscore(), t, "loser"));
-                            int p1_highscore = p1.getHighscore();
-                            p1.setHighscore(p1_highscore);
+                                System.out.println("highscore: " + p1.getHighscore());
+                                System.out.println("highscore: " + p2.getHighscore());
+                            } else if (hp2 == 0) {
+                                System.out.println("Player 1 wins");
+                                StateManager.setWinner(1);
+                                p1.setHighscore(p1.getHighscore() + 1);
+                                musicThread.interrupt();
+                                mediaPlayer.stop();
+                                new SwitchScene(fightAnchorpane, "Fxml/result.fxml");
+                                hp1 = 100;
+                                hp2 = 100;
+                                HttpRequestHelper.updateHighscore(p1.getPlayername(), p1.getHighscore());
+                                Long t = System.currentTimeMillis();
+                                HttpRequestHelper.updateHistory(new Playerhistory(p1.getPlayername(), p1.getHighscore(), t, "winner"));
+                                HttpRequestHelper.updateHistory(new Playerhistory(p2.getPlayername(), p2.getHighscore(), t, "loser"));
+                                int p1_highscore = p1.getHighscore();
+                                p1.setHighscore(p1_highscore);
 //                            System.out.println("highscore: " + p1_highscore);
-                            playername2.setText(p2.getPlayername());
+                                playername2.setText(p2.getPlayername());
 
 
 //                            highscore_player1.setText(String.valueOf(p1.getHighscore()));
 //                            highscore_player2.setText(String.valueOf(p2.getHighscore()));
 //                            JdbcDB.updateDB(playername1.toString(), p1.getHighscore());
-                            System.out.println("highscore: " + p1.getHighscore());
-                            System.out.println("highscore: " + p2.getHighscore());
+                                System.out.println("highscore: " + p1.getHighscore());
+                                System.out.println("highscore: " + p2.getHighscore());
 
 //                            JdbcDB.updateDB(playername2.toString(), p2_highscore);
+                            }
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
                         }
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
                     }
                 }
             }
