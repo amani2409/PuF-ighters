@@ -210,22 +210,16 @@ public class FightController implements Initializable {
                         if (attack.contains('A') && attack.contains('I')) {
                             hp2 -= 20 * hpDamage;
                             hp2_bar.setMaxWidth(hp2 * 3);
-                            System.out.println("hp1: " + hp1);
-                            System.out.println("hp2: " + hp2);
                             attack.clear();
                         }
                         if (attack.contains('A') && attack.contains('K')) {
                             hp1 -= 10 * hpDamage;
                             hp1_bar.setMaxWidth(hp1 * 3);
-                            System.out.println("hp1: " + hp1);
-                            System.out.println("hp2: " + hp2);
                             attack.clear();
                         }
                         if (attack.contains('A') && attack.contains('L')) {
                             hp2 -= 10 * hpDamage;
                             hp2_bar.setMaxWidth(hp2 * 3);
-                            System.out.println("hp1: " + hp1);
-                            System.out.println("hp2: " + hp2);
                             attack.clear();
                         }
 
