@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="nur ein paar Anpassungen">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="273317f9-b0f6-4f0c-a736-112cd4d4b8a9" name="Changes" comment="1. Versuch README">
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/DatabaseImg/playfig-9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/configImg/carbon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/configImg/configAPI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/configImg/newMysqlProj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/configImg/newMysqlProj1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMeImg/configImg/newTable.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pufighters/Controllers/FightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +169,7 @@
       <workItem from="1687813658445" duration="1911000" />
       <workItem from="1687857248821" duration="2168000" />
       <workItem from="1687881742271" duration="11235000" />
-      <workItem from="1687954724358" duration="7581000" />
+      <workItem from="1687954724358" duration="10077000" />
     </task>
     <task id="LOCAL-00001" summary="let's go !">
       <created>1682525477673</created>
@@ -321,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687892234460</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="1. Versuch README">
+      <created>1687966578363</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687966578363</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +382,8 @@
     <MESSAGE value="Nur Settings etwas angepasst von den buttons und von den Music on und off button" />
     <MESSAGE value="disable keyinput, wenn in Timeline ready set fight steht danach keyinput enable" />
     <MESSAGE value="überall Kommentare&#10;unnötige Zeilen gelöscht und einige Anpassungen&#10;&#10;DONE!!! Let's Go PuFighters! We are the Alpha :D" />
-    <option name="LAST_COMMIT_MESSAGE" value="überall Kommentare&#10;unnötige Zeilen gelöscht und einige Anpassungen&#10;&#10;DONE!!! Let's Go PuFighters! We are the Alpha :D" />
+    <MESSAGE value="1. Versuch README" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Versuch README" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
